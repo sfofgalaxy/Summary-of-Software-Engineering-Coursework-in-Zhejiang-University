@@ -1,4 +1,4 @@
-#### 程序设计方法学（principles of pragramme language)
+## 程序设计方法学（principles of pragramme language)
 > 差最后一门课毕业，2020秋冬学期, 评分标准和前一年有点区别。
 > - 课内讨论与测验：5%
 > - 单元⼩作业：15%
