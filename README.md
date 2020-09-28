@@ -4,8 +4,10 @@ This repository is my 【Summary of Software Engineering Coursework in Zhejiang 
 ## 大一 (2017.9-2018.6)
 
 #### 程序设计基础
+pending upgrade...
 
 #### 程序设计专题
+pending upgrade...
 
 #### 离散数学及其应用
 
@@ -58,11 +60,12 @@ pending upgrade
 
 ## 大三 (2019.9-2020.6)
 
-> **大三上。终于写到了最硬核的一学期。
+- **大三上。终于写到了最硬核的一学期。**
 
 #### Java应用技术
-pending upgrade...
-
+> 三个班，我是鲁伟明老师的，另外两个是翁恺和楼学庆老师。有期中和期末考试，期末开卷。
+> 平时就三到四个大作业，包括用分析stringbuilder, stringbuffer, string源代码，用java爬取数据，还有一个java游戏（要求用到多线程，网络等）
+> 我们平时没有选择题、编程题。听说wk班很多，虽然平时轻松不少，期末考试就看出来我们班的期末很拉跨，所以还是要好好复习的。
 #### 操作系统(OS)(operating system)
 pending upgrade...
 
@@ -84,7 +87,7 @@ pending upgrade...
 #### 共同基金概论
 pending upgrade...
 
-> **大三下（疫情期间上网课）
+- **大三下（疫情期间上网课）**
 
 #### 计算机科学技术思想史
 > 上的网课，直播一定要看，论文ppt好好做，给分很好。
