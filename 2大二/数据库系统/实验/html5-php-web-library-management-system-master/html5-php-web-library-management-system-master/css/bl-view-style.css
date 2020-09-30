@@ -1,0 +1,28 @@
+#bl_modal1 label{
+    font-size: 25px;
+}
+
+#bl_modal1{
+    text-align: center;
+}
+
+.borrow_book {
+
+}
+
+.borrow_book_modal_body{
+    text-align: left;
+}
+
+.borrow_book_modal_body div{
+    margin-bottom: 5%;
+    margin-left: 20%;
+}
+
+.borrow_book_modal_body label{
+    font-size: 12px;
+}
+
+.return_button{
+    width: 50px;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/book-view-style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+<body>
+
+<!-- 模态框 -->
+
+<div class="modal fade" id="myModal" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">模态框头部</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                模态框内容..
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="add_book_to_db()">确认</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancle_to_add_book()">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 模态框2 -->
+
+<div class="modal fade" id="reader_detail_Modal" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align: center">读者证件照</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <!--<img src="/1.jpg" alt="" style="width:100%;">-->
+
+                <div id="book_detail_modal_body">
+                </div>
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-box">
+
+    <div class="menu-box">
+        <div id="brand">
+            <div id="brand_div" onclick="window.location.href='index.html'"><div id="temp_div"></div><a id="brand_a">图书馆首页</a></div>
+        </div>
+        <div style="height: 10%"></div>
+        <nav class="nav flex-column" id="nav-list">
+            <a class="nav-link active" href="book.html"><div class="nav-list-label"><i class="icon-book"></i>&nbsp;&nbsp;&nbsp;图书管理/借书</div></a>
+            <a class="nav-link" href="history.html"><div class="nav-list-label"><i class="icon-calendar"></i>&nbsp;&nbsp;&nbsp;借阅记录/还书</div></a>
+            <a class="nav-link"  style="background-color: #646464" href="license.html"><div class="nav-list-label"><i class="icon-user-md"></i>&nbsp;&nbsp;&nbsp;借书证管理</div></a>
+        </nav>
+        <div class="menu-footer"><p>Copyright © 彭子帆.<br>All rights reserved. </p></div>
+    </div>
+
+
+
+    <div class="content-box">
+        <div class="book-view-header">
+
+            <div id="book_retrieve_form_div">
+                <form name="book_retrieve_form" enctype="multipart/form-data">
+                    <input type="text" class="search-book" id="input_rid" placeholder="借书证" name="Rid">&nbsp;
+                    <input list="card-statuses" class="search-book" name="card-statuses" placeholder="学号" id="select_card_status">
+                    <input type="button" class="search-book retrieve_button" id="retrieve_reader_button" value="检索">
+                </form>
+            </div>
+
+
+        </div>
+
+
+        <div class="book-view-content" id="book-view-cocntent">
+
+            <div style="widtd: 100%; height: 30px"></div>
+
+
+            <div>
+                <table class="table table-hover table-in-all tbcontainer" id="tbcontainer">
+                    <thead>
+                    <tr>
+                        <th scope="col">借书证号</th>
+                        <th scope="col">学号</th>
+                        <th scope="col">剩余同时借阅数量</th>
+                        <th scope="col">当前是否有效</th>
+
+                    </tr>
+                    </thead>
+                    <tbody class="table table-hover" id="reader-list-table-body">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

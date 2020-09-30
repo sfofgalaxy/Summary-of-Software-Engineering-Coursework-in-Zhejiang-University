@@ -1,0 +1,22 @@
+﻿生成启动时间为 2019/6/11 14:12:26。
+     1>项目“D:\浙大\2018~2019春夏\OOP\Code\unit four code\template stack\template stack.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\template stack.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\template stack.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         test.cpp
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019春夏\OOP\Code\unit four code\Debug\template stack.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\template stack.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019春夏\OOP\Code\unit four code\Debug\template stack.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2018~2019春夏\OOP\Code\unit four code\Debug\template stack.lib" /MACHINE:X86 Debug\test.obj
+         template stack.vcxproj -> D:\浙大\2018~2019春夏\OOP\Code\unit four code\Debug\template stack.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2018~2019春夏\OOP\Code\unit four code\Debug\template stack.exe;#1" /manifest "Debug\template stack.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“Debug\template stack.unsuccessfulbuild”。
+         正在对“Debug\template stack.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\浙大\2018~2019春夏\OOP\Code\unit four code\template stack\template stack.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.72

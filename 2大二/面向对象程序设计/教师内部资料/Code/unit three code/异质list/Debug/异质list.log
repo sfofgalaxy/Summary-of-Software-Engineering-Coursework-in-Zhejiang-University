@@ -1,0 +1,29 @@
+﻿Build started 2017/6/19 15:27:42.
+     1>Project "D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\异质list\异质list.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\异质list.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Debug\异质list.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         d:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt basetype.cpp queue.cpp test.cpp
+         test.cpp
+         queue.cpp
+         basetype.cpp
+     1>d:\浙大\2016~2017春夏\oop\code\unit three code\old\异质list\basetype.cpp(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : see declaration of 'strcpy'
+         Generating Code...
+       Link:
+         d:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\Debug\异质list.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\异质list.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\Debug\异质list.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\Debug\异质list.lib" /MACHINE:X86 Debug\basetype.obj
+         Debug\queue.obj
+         Debug\test.obj
+         异质list.vcxproj -> D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\Debug\异质list.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\Debug\异质list.exe;#1" /manifest "Debug\异质list.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Debug\异质list.unsuccessfulbuild".
+         Touching "Debug\异质list.lastbuildstate".
+     1>Done Building Project "D:\浙大\2016~2017春夏\OOP\Code\unit three code\old\异质list\异质list.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.73

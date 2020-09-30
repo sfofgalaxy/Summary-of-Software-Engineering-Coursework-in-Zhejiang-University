@@ -1,0 +1,4 @@
+﻿  源.cpp
+d:\!大二下\数据库系统\实验\lab5\lab5\lab5\源.cpp(307): warning C4101: “tmp”: 未引用的局部变量
+d:\!大二下\数据库系统\实验\lab5\lab5\lab5\源.cpp(313): warning C4101: “tablename”: 未引用的局部变量
+  lab5.vcxproj -> D:\!大二下\数据库系统\实验\lab5\lab5\x64\Debug\lab5.exe

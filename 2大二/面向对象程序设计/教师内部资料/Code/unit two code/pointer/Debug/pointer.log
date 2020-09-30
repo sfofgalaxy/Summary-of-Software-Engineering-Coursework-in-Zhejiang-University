@@ -1,0 +1,14 @@
+﻿生成启动时间为 2018/10/17 10:48:20。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit two code\pointer\pointer.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>GenerateTargetFrameworkMonikerAttribute:
+       正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /analyze- /errorReport:prompt "difference between pointers in C and in C++.cpp" /clr:nostdlib 
+         difference between pointers in C and in C++.cpp
+     1>difference between pointers in C and in C++.cpp(43): error C2440: “static_cast”: 无法从“int *”转换为“double *”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit two code\pointer\pointer.vcxproj”(ClCompile 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.47

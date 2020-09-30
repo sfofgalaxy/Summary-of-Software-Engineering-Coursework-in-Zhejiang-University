@@ -1,0 +1,10 @@
+﻿生成启动时间为 2019/2/27 16:28:41。
+     1>项目“D:\浙大\2018~2019春夏\OOP\Code\unit one code\stack\stack.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt otherFile.cpp
+         otherFile.cpp
+     1>已完成生成项目“D:\浙大\2018~2019春夏\OOP\Code\unit one code\stack\stack.vcxproj”(ClCompile 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.83

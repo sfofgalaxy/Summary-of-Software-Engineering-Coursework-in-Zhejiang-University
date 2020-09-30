@@ -1,0 +1,10 @@
+﻿  源.c
+d:\@大二上\数据结构基础\bonus2\bonus2\源.c(35): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\@大二上\数据结构基础\bonus2\bonus2\源.c(54): warning C4101: “j”: 未引用的局部变量
+d:\@大二上\数据结构基础\bonus2\bonus2\源.c(54): warning C4101: “i”: 未引用的局部变量
+d:\@大二上\数据结构基础\bonus2\bonus2\源.c(144): warning C4013: “strcmp”未定义；假设外部返回 int
+d:\@大二上\数据结构基础\bonus2\bonus2\源.c(178): warning C4013: “strcpy”未定义；假设外部返回 int
+d:\@大二上\数据结构基础\bonus2\bonus2\源.c(170): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+  bonus2.vcxproj -> D:\@大二上\数据结构基础\bonus2\Debug\bonus2.exe

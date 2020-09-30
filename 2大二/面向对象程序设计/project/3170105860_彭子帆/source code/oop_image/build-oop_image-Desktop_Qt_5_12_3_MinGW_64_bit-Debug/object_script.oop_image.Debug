@@ -1,0 +1,13 @@
+debug/contrast.o
+debug/histogram.o
+debug/image.o
+debug/luminance.o
+debug/main.o
+debug/menu.o
+debug/open_image.o
+debug/picture_mark.o
+debug/saturate.o
+debug/split.o
+debug/water_mark.o
+debug/zoom.o
+debug/moc_menu.o

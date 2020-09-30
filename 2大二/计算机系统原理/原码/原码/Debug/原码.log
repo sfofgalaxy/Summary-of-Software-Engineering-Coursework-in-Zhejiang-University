@@ -1,0 +1,9 @@
+﻿  源.c
+d:\!大二下\计算机系统原理\原码\原码\源.c(48): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdlib.h(1323): note: 参见“itoa”的声明
+d:\!大二下\计算机系统原理\原码\原码\源.c(49): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(90): note: 参见“strcat”的声明
+d:\!大二下\计算机系统原理\原码\原码\源.c(63): warning C4013: “msub”未定义；假设外部返回 int
+d:\!大二下\计算机系统原理\原码\原码\源.c(78): warning C4142: "msub": 类型的良性重定义
+d:\!大二下\计算机系统原理\原码\原码\源.c(97): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+  原码.vcxproj -> D:\!大二下\计算机系统原理\原码\Debug\原码.exe

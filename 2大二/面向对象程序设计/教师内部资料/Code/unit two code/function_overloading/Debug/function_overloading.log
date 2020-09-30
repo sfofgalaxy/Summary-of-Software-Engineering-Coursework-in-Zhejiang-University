@@ -1,0 +1,25 @@
+﻿生成启动时间为 2018/10/24 9:11:08。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit two code\function_overloading\function_overloading.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\function_overloading.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt functionsOfTheSameNameInC2.cpp
+         functionsOfTheSameNameInC2.cpp
+     1>d:\浙大\2018~2019秋冬\oop\code\unit two code\function_overloading\functionsofthesamenameinc2.cpp(20): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\浙大\2018~2019秋冬\oop\code\unit two code\function_overloading\functionsofthesamenameinc2.cpp(24): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\浙大\2018~2019秋冬\oop\code\unit two code\function_overloading\functionsofthesamenameinc2.cpp(24): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\浙大\2018~2019秋冬\oop\code\unit two code\function_overloading\functionsofthesamenameinc2.cpp(24): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\浙大\2018~2019秋冬\oop\code\unit two code\function_overloading\functionsofthesamenameinc2.cpp(26): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019秋冬\OOP\Code\unit two code\Debug\function_overloading.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\function_overloading.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019秋冬\OOP\Code\unit two code\Debug\function_overloading.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2018~2019秋冬\OOP\Code\unit two code\Debug\function_overloading.lib" /MACHINE:X86 Debug\functionsOfTheSameNameInC2.obj
+         function_overloading.vcxproj -> D:\浙大\2018~2019秋冬\OOP\Code\unit two code\Debug\function_overloading.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2018~2019秋冬\OOP\Code\unit two code\Debug\function_overloading.exe;#1" /manifest Debug\function_overloading.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\function_overloading.unsuccessfulbuild”。
+         正在对“Debug\function_overloading.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit two code\function_overloading\function_overloading.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.68

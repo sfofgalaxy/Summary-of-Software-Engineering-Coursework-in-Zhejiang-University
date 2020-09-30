@@ -1,0 +1,37 @@
+﻿生成启动时间为 2018/11/28 10:06:49。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\employee\employee.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\employee.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\employee.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt employee.cpp manager.cpp test.cpp
+         test.cpp
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\employee\employee.h(12): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\employee\manager.h(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+         manager.cpp
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\employee\employee.h(12): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\employee\manager.h(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+         employee.cpp
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\employee\employee.h(12): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+         正在生成代码...
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\employee.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\employee.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\employee.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\employee.lib" /MACHINE:X86 Debug\employee.obj
+         Debug\manager.obj
+         Debug\test.obj
+         employee.vcxproj -> D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\employee.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\employee.exe;#1" /manifest Debug\employee.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\employee.unsuccessfulbuild”。
+         正在对“Debug\employee.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\employee\employee.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.92

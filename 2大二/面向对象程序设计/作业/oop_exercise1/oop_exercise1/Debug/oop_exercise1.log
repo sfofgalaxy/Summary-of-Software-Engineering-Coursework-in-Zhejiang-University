@@ -1,0 +1,38 @@
+﻿  Heterogeneous linked list.c
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(21): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“void *”
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(24): warning C4477: “printf”: 格式字符串“%c”需要类型“int”的参数，但可变参数 1 拥有了类型“void *”
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(54): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“void **”
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(58): warning C4477: “scanf”: 格式字符串“%c”需要类型“char *”的参数，但可变参数 1 拥有了类型“void **”
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(54): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(58): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(62): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(66): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(70): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(94): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“void **”
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(98): warning C4477: “scanf”: 格式字符串“%c”需要类型“char *”的参数，但可变参数 1 拥有了类型“void **”
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(94): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(98): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(102): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(106): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(110): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(215): warning C4020: “DeleteHead”: 实参太多
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(216): warning C4020: “DeleteHead”: 实参太多
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(219): warning C4020: “DeleteTail”: 实参太多
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(220): warning C4020: “DeleteTail”: 实参太多
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(190): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(195): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\!大二下\面向对象的程序设计\作业\oop_exercise1\oop_exercise1\heterogeneous linked list.c(208): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+  oop_exercise1.vcxproj -> D:\!大二下\面向对象的程序设计\作业\oop_exercise1\Debug\oop_exercise1.exe

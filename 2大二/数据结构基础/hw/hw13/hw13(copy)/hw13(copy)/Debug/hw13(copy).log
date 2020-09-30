@@ -1,0 +1,7 @@
+﻿  源.cpp
+d:\@大二上\数据结构基础\hw13\hw13(copy)\hw13(copy)\源.cpp(60): warning C4018: “<”: 有符号/无符号不匹配
+d:\@大二上\数据结构基础\hw13\hw13(copy)\hw13(copy)\源.cpp(39): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+d:\@大二上\数据结构基础\hw13\hw13(copy)\hw13(copy)\源.cpp(42): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+  hw13(copy).vcxproj -> D:\@大二上\数据结构基础\hw13\hw13(copy)\Debug\hw13(copy).exe

@@ -1,0 +1,25 @@
+1. what is information security
+  a.confidentiality   b.availability   c. Integrity
+
+
+1.2 security 
+a.prevention b.detection c. recovery
+
+2.2
+1.破解的等级：
+a.仅需密文进行破解
+b.需要一定数量的明密文对
+c.任意明文都能知道密文
+
+2.对应字母：
+P Plaintext
+C Ciphertext
+E Encryption function
+D Decryption function
+E(P) = C encrypting plaintext yields ciphertext
+D(C) = P decrypting ciphertext yields plaintext
+
+3.加密
+对称加密，密钥双方相同
+不对称加密，接受与发送方密钥不同
+Digital Signatures & Hash Algorithms

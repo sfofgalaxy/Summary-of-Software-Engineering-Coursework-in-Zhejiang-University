@@ -1,0 +1,915 @@
+OOP成绩组成：
+  总评=50%期末+50%平时（30%project+20%PAT练习）
+                        5%中期project report
+                        25%期末project
+             
+
+
+一、结构体变量/对象的大小
+原则1、数据成员对齐规则：结构（struct或联合union或class）的数据成员，第一个数据成员放在offset为0的地方，以后每个数据成员存储的起始位置要从该成员大小的整数倍开始（比如int在32位机为４字节，则要从4的整数倍地址开始存储）。
+原则2、结构体作为成员：如果一个结构里有某些结构体成员，则结构体成员要从其内部最大元素大小的整数倍地址开始存储。（struct a里存有struct b，b里有char，int，double等元素，那b应该从8的整数倍开始存储。）
+原则3、收尾工作：结构体的总大小，也就是sizeof的结果，必须是其内部最大成员的整数倍，不足的要补齐。
+
+struct MyStruct 
+{
+    char dda; 
+    double dda1;
+    int type;
+}； 
+sizeof(MyStruct) == 24
+
+struct MyStruct 
+{
+    double dda1; 
+    char dda; 
+    int typ; 
+}; 
+sizeof(MyStruct) == 16
+
+
+二、How to initialize an object?  How to destory an object?
+   in C:
+        int i;
+        ++i;
+        int *pi;
+        *pi = 0;
+
+  in C++: constructor/destructor
+
+about Memory manage
+ 1）RESOURCE_LEAK
+    资源泄漏（内存泄漏）指变量在出了自己的作用范围后，占用的资源仍然驻守在内存里，没有被释放。
+    严重的内存泄漏能导致进程崩溃，即便是很小的内存泄漏，在系统长时间运行没有重启后，也会产生错误。
+如果内存泄漏是由用户输入或者网络数据触发，还会成为“拒绝服务攻击”的对象。
+文件句柄或者网络套接字的泄漏会导致程序崩溃、拒绝服务攻击或者打开其他文件或套接字失败。
+操作系统通常会限制进程的文件句柄和套接字个数。当达到限制的最大值时，进程要申请新的资源时，
+首先要关闭一些已打开的资源。如果进程中存在资源泄漏，进程自己将没有办法回收这些资源，除非强行终止该进程。
+多数情况下，这些泄漏通常发生在某个错误的路径，比如说，某个异常处理的分支。
+这种情况下，正确的做法应该是将程序跳转（GOTO）到该函数的出口，出口处应释放这些资源。
+ 
+Example：
+
+int *p = (int*)malloc(100);
+p = p + 10;
+free(p); //40bytes is leaked
+
+int leak_example(int c) 
+{
+	void *p = malloc(10);
+	if(c)
+	    return -1; // "p" is leaked
+	/* ... */
+	free(p);
+	return 0;
+}
+
+int wrong_error_check()   //In C: the following is Common
+{
+	void *p = malloc(10);
+	void *q = malloc(20);
+	if(!p || !q)
+	   return -1; // "p" or "q" may be leaked if the other is NULL
+	/*...*/
+	free(q);
+	free(p);
+	return 0;
+}
+
+int test(int i) 
+{
+	void *p = malloc(10);
+	void *q = malloc(4);
+	if(i > 0)
+	   p = q; // p is overwritten and is the last pointer
+	else  // to the allocated memory
+        {
+	   free(q);
+	   free(p);
+        }
+	return 0;
+}
+
+
+void UseFile(char const* fn)
+{
+    FILE* f = fopen(fn, "r");        // 获取资源
+    // 使用资源
+    if (!g()) return;            // 如果操作g失败！leaking file pointer "f"
+    // ...
+    if (!h()) return;            // 如果操作h失败！leaking file pointer "f"
+    // ...
+    fclose(f);                       // 释放资源
+}
+
+int* getmemory(int n)
+{
+     int *p = (int*)malloc(n*sizeof(int));
+     return p;
+}
+
+
+问题：
+1)  C++中：
+    对象创建时，有合适的自动机制对对象进行初始化工作；constructor
+    对象出其作用域时，有合适的自动机制对对象占用的资源(如果对象有资源占用)进行释放（防止对象资源的泄漏） destructor
+
+    Java的垃圾回收机制
+
+2)unit three\student
+//if:
+Student::Student(const char* name,short age,char sex[])
+{ 
+	this->name = name; 
+	this->age = age;
+	strcpy(this->sex,sex);	  
+}
+
+~Student()
+{   
+	if (name != NULL)
+	    free(name);
+}
+
+void main()
+{
+    char *name = (char*) malloc(100);
+    getline(cin, name);
+    Student zhangsan(name, 22, "男");    //name与zhangsan.name指向同一区域
+    free(name);
+    //zhangsan.print();//error
+}
+
+
+3)default constructor: No argument constructor
+default destructor: The compiler automatically generates when ......
+
+    class A{
+       int i;
+    public:
+        void print(){cout << i << endl;}
+    };
+    void main()
+    {
+        A a;  //compile ok, a.i值不确定
+        A m[10];  //call 10 A::A()
+    }
+
+complex类需要用户自己写析构函数吗?(unit three\simple complex)
+
+
+3月26日page28
+
+4) RAII惯用法（the Resource Acquisition Is Initialization）：C++资源管理的利器 
+     将资源抽象为类，用局部对象来表示资源，把管理资源的任务转化为管理局部对象的任务。
+     例如，我们可以将文件句柄FILE抽象为FileHandle类：
+
+class FileHandle {
+public:
+    FileHandle(char const* fname, char const* mode) 
+   { 
+       p = fopen(fname, mode); 
+    }
+    ~FileHandle() 
+    { 
+       fclose(p); 
+    }
+private:
+    FILE *p;
+};
+
+void UseFile(char const* fn)
+{
+    FileHandle file("myfirst.cpp", "r");
+    // 在此处使用文件句柄file
+
+    // 超出此作用域时，系统会自动调用FileHandle类的析构函数，从而释放资源
+}
+
+5)Object Lifetime 
+
+3.2 object member
+
+subobject: When an object is created, the compiler guarantees that constructors for all of its subobjects are called. 
+
+1)尽量使用Constructor initialization list初始化而不要在构造函数里赋值
+class people{
+private:
+      int num;
+      string name;
+public:
+      //if
+      people(int number, char *name)
+      {
+            num = number;
+            this->name = name;
+      }
+     //尽可能如下
+     people(int number, char *name): name(name), num(number)
+     {}
+};
+people zhang(19, "张三");
+=> call string() call people(int number, char *name) call string::operator=()
+
+people zhang(19, "张三");
+=> call string(const char *) call people(int number, char *name)
+
+2) member-wise
+   1: memberwise initializing
+   2: memberwise assignment
+          
+3) sequence of Member object initialization 成员对象初始化的顺序
+   class A{//..};
+   class B{//..};
+   class C{
+   private:
+           B n;
+           A m;
+           int i;
+   public:
+          C():i(0){}
+          C(参数列1的类型声明,参数列2的类型声明, int i) : m(参数列1), n(参数列2)
+          { this->i = i; }
+   };
+思考：A::A()
+      {
+        cout << "A()";
+      }
+      B::B()
+      {
+        cout << "B()";
+      }
+      C m;
+
+
+3.3 运算符重载  page41
+
+11.29 page45
+
+1)运算符重载成类的成员函数
+  对双目运算符而言：
+    成员运算符函数的形参表中仅有一个参数,它作为运算符的右操作数,此时当前对象作为运算符的左操作数,它是通过this指针隐含地传递给函数的。
+    a + b   ==>  a.operator+(b)   
+  对单目运算符而言：
+    成员运算符函数的参数表中没有参数,此时当前对象作为运算符的一个操作数。
+    +a     ==>a.operator+()
+ 
+  c = a + 4;
+  编译器处理这个调用时的情形类似下面这样：
+  const complex temp(4); // 从4产生一个临时complex对象
+  c = a + temp; // 同a.operator+(temp);
+  
+  //or
+  c = 4 + a;  //complie-time error
+  解决方法：重载一个全局函数
+            const complex operator+(int, const complex&);
+
+  c = 4 + 4;
+  complex& complex::operator=(const complex& r)
+  {
+       rpart = r.rpart;
+       ipart = r.ipart;
+       retrun *this;
+  }
+ 
+2)运算符重载成友员函数
+  对双目运算符而言：
+    当用友元函数重载双目运算符时,两个操作数都要传递给运算符函数。 
+    a + b   ==> operator+(a, b) 
+  对单目运算符而言：
+    用友元函数重载单目运算符时,需要一个显式的操作数。
+    +a      ==> operator+(a)
+
+    int a, b, c;
+    cin >> a >> b;
+    c = a + b;
+    cout << c;
+
+    //hoping:
+    complex a, b, c;
+    cin >> a >> b;
+    c =  a + b;
+    cout << a;
+
+   如何重载">>"和"<<"？   
+  cin >> a;
+  cout << a;
+  extern istream cin; 不能实现：cin.operator>>(a);
+  extern ostream cout; 
+
+  必须重载成非成员函数：operator>>(cin, a);
+  istream& operator>>(istream& in, complex& com)  
+  {
+	in >> com.rpart >>com.ipart;
+	return in;
+  }
+  coding:
+  cin >> a >> b;    ==>  operator>>( operator>>(cin, a), b);
+
+    
+3)member function  VS  non-member function (friend global function / friend function) 
+  友员函数只是在类中声明，不是成员函数；
+  非成员函数和友员函数中没有this指针；
+  只有const member function ，没有const non-member function；
+  只要能避免使用友元函数就要避免，因为，友元破坏面向对象的封装性
+  operator>>和operator<<只能是非成员函数。如果operator>>和operator<<还需要访问独享类C的非公有成员，
+  让operator>>和operator<<成为类C的友元函数。
+
+  class A{
+     friend int B::f(A& obj);   //friend member function
+     //...
+  };
+  class A{
+     friend class B;    //friend class 
+ 
+  }；
+  class B{
+  pubic:
+      int f(A& obj);
+  };
+
+4）operator=
+
+    the compiler will automatically synthesize......
+    Policy: bitcopy
+
+   complex a, b, c;
+   c = a + b;
+   //自动生成的赋值操作
+   complex& complex::operator=(const complex& right)
+   {
+      rpart = right.rpart;
+      ipart = right.ipart;
+      return *this;
+   }
+   
+1)为什么不是const member function?  a = b ;要改写a
+
+2)为什么要返回引用complex& ?
+  if:
+   complex complex::operator=(const complex& right)
+   {
+      rpart = right.rpart;
+      ipart = right.ipart;
+      return *this;
+   }
+   a = b; //ok
+   ( a = b ) = c; ==> ( b改写了a,返回一个内存中的临时对象) = c;==>c改写了内存中的这个临时对象 , 最后并没有改写a。
+
+3)为什么不返回void
+  C++程序员经常犯的一个错误是让operator=返回void,这好像没什么不合理的，但它妨碍了连续(链式)赋值操作。
+  void operator=(const complex& right)
+   {
+      rpart = right.rpart;
+      ipart = right.ipart;
+   }
+  a = b = c;      a = (void)
+  (a = b ) = c;   (void) = c;
+
+4)Why not be overloaded global functions?
+
+  //If using a global function to overload operator =
+
+  complex& operator=(complex& left, const complex& right)
+  {
+      left.rpart = right.rpart;
+      left.ipart = right.ipart;
+      return *this;   
+  }
+  then:
+  complex a;
+  a = 3; //ok operator=(a, complex(double(3));
+  3 = a; //Compile correctly, operator=(complex(double(3)), a);
+
+ IN C++，Function call sequence：Member function ---> the global function 
+   if:
+   complex a, b;
+   
+   a  +  b
+  
+c = a + 4;  
+operator+(a, complex(double(4), 0.0));
+or:
+a.operator double() + 4
+
+5)重载()
+  
+
+6)memberwise assignment成员赋值
+   member-wise
+   1: memberwise initializing
+   2: memberwise assignment
+
+
+  class A{   
+  public:
+      A& opeator=(const A& r)
+      {
+         cout << "In A::operator=()." << endl;
+      }
+  };
+  class B{   
+  public:
+      B& opeator=(const B& r)
+      {
+         cout << "In B::operator=()." << endl;
+      }
+  };
+  class C{
+  private:
+       A a;   //member object
+       B b;
+       int c;
+  public:
+      void print() const
+      {   cout << c;  }
+  };
+思考：当C的赋值操作是系统生成时
+       C m,n;
+       m = n;  屏幕输出是什么？
+
+
+      C& operator=(const C& right)
+      {
+         a = right.a;   call a.operator=(right.a)  
+         b = right.b;
+         c = right.c;
+         return *this;
+      }    
+      屏幕输出:   In A::operator=().
+                  In B::operator=().
+
+
+2018.12.6 page65
+7)含有const data member的类，不会自动生成operator=
+class A
+{
+	int i;
+	const int d;
+};
+
+void main()
+{
+	A a,b;
+        a = b;
+	//but A c(a)
+} 
+6)在operator=中处理“自我赋值”
+
+
+二、继承
+   设计类：employee.h/employee.cpp
+   
+	employee(char * name,short age,float salary)
+	{
+		//this->name = name; error
+		this->name = new char[strlen(name)+1];
+		strcpy(this->name,name);
+		this->age = age;
+		this->salary = salary;	
+	}
+employee zhang("张三", 20, 4000);
+char *p = new char[strlen("张三")+1];
+strcpy(p, "张三");
+employee zhang(p, 20, 4000);
+delete[] p;
+
+2)Order of constructor & destructor calls
+    order.cpp
+
+class Base1 { 
+public: 
+  Base1(int) { cout << "Base1 constructor\n"; } 
+  ~Base1() { cout << "Base1 destructor\n"; } 
+};
+
+
+1)redefining existing member functions during inheritance 
+ 在增加了Double Manager::Salary(){Manager对象的薪水计算代码}
+//you can say:
+zs.Salary();  //call Manager::Salary()  本地优先
+
+Manager类继承基类的Iam()、SignIn()接口和代码
+Manager类仅继承基类的print()、Salary()接口
+
+
+3）Access protection:
+   Public Member---visible to self and  all clients
+   Protected Member---visible to self and classes derived from self and to friends
+   Private Member---visible only to self and to friends!
+《代码大全》让所有数据都是private（而非protected）。当你从一个类继承时，你就拥有了能够访问基类对象的protected成员的特权。如果派生类真的需要访问基类的私有属性，就应提供protected访问器函数（accessor function）
+
+4) inheritance hierarchy 
+
+5) Inheritance of interface and inheritance of implementation
+   Manager类继承基类的Iam()、SignIn()接口和代码
+   Manager类仅继承基类的print()、Salary()接口
+
+redefining existing member functions during inheritance 
+ 在增加了Double Manager::Salary(){Manager对象的薪水计算代码}
+//you can say:
+zs.Salary();  //call Manager::Salary()  本地优先
+
+6）Avoid hiding inherited names
+
+7）upcasting
+
+8）public inheritance / private inheritance / protected inheritance
+   1. 公有继承(public)
+      公有继承的特点是基类的公有成员和保护成员作为派生类的成员时，它们都保持原有的状态，而基类的私有成员仍然是私有的，不能被这个派生类的子类所访问。
+
+   2. 私有继承(private)
+      私有继承的特点是基类的公有成员和保护成员都作为派生类的私有成员，并且不能被这个派生类的子类所访问。
+
+   3. 保护继承(protected )
+      保护继承的特点是基类的所有公有成员和保护成员都成为派生类的保护成员，并且只能被它的派生类成员函数或友元访问，基类的私有成员仍然是私有的。
+
+两个classes之间的关系：
+    没有关系
+    is-a关系
+    has-a关系(有一个)
+    is-implemented-in-terms-of(根据某物实现出)
+
+2018.12.20 page146
+通知：
+一、抓紧时间完成project
+  《期末project代码&报告的基本要求2018~2019秋冬》已上传至：pintia.cn
+
+9）虚函数
+  a)虚函数的作用: 使用多态指针（基类引用）和虚函数，实现动态绑定。
+    两个要素
+
+
+  b)虚函数的定义 unit three\ Polymorphism\virtual function.cpp
+  
+    non-virtual member function: 基类提供实现，派生类继承接口和实现。
+                               
+      Rectangle r;
+      r.objectID();   通过派生类对象调用从基类继承的non-virtual member function语法正确，语义也正确
+  
+    virtual member function: 基类与派生类有同名操作（继承接口），派生类可以有自己的实现，也可以没有。
+ 	
+  每个派生类都可以支持一个“当遇上错误时可调用”的函数，每个派生类可自由处理错误。如果某个派生类不想针对错误做出任何特殊行为，它可以退回到基类shape提供的缺省错误处理行为。
+  void Shape::error() const
+  {
+     //缺省错误处理代码
+  }  
+
+ c)构造函数不能是虚的，但析构函数往往是虚的；
+
+ d)编译器自动生成的析构函数不是虚函数
+
+  class A{
+      int i;
+  public:
+      A(int ii=0):i(ii){}
+  };
+  class B: public A{
+      char *p;
+  public:
+       B(char *p)
+       {
+          this->p = new char[strlen(p)+1];
+          strcpy(this->p, p);
+       }
+      ~B()
+      {
+         delete[] p;
+      }
+};
+
+void main()
+{
+    B b("hello");  //A(int ii)-->B(char *p)
+                     ~B() --> ~A()
+  
+    A *p = new B("world!");  //A(int ii)-->B(char *p)
+    delete p;   ~A()
+}
+
+ e) virtual的正确使用
+1)
+class A{
+public:
+     void f(){...}
+     int g(int a) {...}
+};
+class B: public A{
+};
+
+class C: public B{
+};
+
+   B b;
+   C c;
+   b.f();  语法正确，语义也正确  
+   c.f();  语法正确，语义也正确
+
+   void A::f() is non-virtual member function
+
+   b.g(3);  语法正确，语义错误。解决方法：
+            redefine int B::g(int)
+           virtual int A::g(int a) is virtual member function 
+           派生类与基类同名（函数原型一样）操作自动就成了虚函数。
+
+   A *p =  new A;
+   p->g();  Dynamic binding, call int A::g()
+   p = new B;
+   p->g();  Dynamic binding, call int B::g()
+
+   or:
+   b.g(3);  语法正确，语义也正确  
+   c.g(4);  语法正确，语义错误。解决方法：
+            redefine int C::g(int)
+            virtual int A::g(int a) is virtual member function 
+  
+2)
+class A{
+   public:
+       virtual int g() {return 1;}
+};
+class B: public A{
+   public:
+       virtual int g(int a) {return a+1;}
+};
+      是重载关系，要注意Namehiding
+	A *p = new B;
+	p->g();   //call A::g()
+	p->g(2);  //error C2660: 'A::g' : function does not take 1 arguments
+
+
+3)
+class A{
+   public:
+       virtual int g()  {return 1;}
+};
+class B: public A{
+   public:
+       virtual int g() const {return 1;}
+};
+       是重载关系，要注意Namehiding
+        A *p = new B;
+        p->g();   //call A::g()
+	const A *q = new B;
+	q->g();  //error C2662: 'A::g' : cannot convert 'this' pointer from 'const A' to 'A &
+
+ 
+4) class A{
+   public:
+       virtual int g() const {...}
+   }；
+   class B : public A{
+   public:
+       virtual int g() {...}
+   };
+   A *p;
+   p = new B;
+   p->g();  call int A::g() 
+
+5)
+class A{
+   public:
+       virtual float g()  {return 1;}
+};
+class B: public A{
+   public:
+       virtual int g() {return 1;}
+};
+
+compile-time error
+
+
+
+6)
+class A{
+   public:
+       virtual int g() {return 1;}
+};
+class B: public A{
+   public:
+       virtual int g(int a) {return a+1;}
+};
+class C:public B{
+	virtual int g() {return 2;}
+};
+
+   A *p;
+   p = new B;
+   p->g();   //call int A::g()
+   //p->g(2);  //error C2660: 'A::g' : function does not take 1 arguments
+   p = new C;
+   p->g();   //dynamic binding, call int C::g()
+
+
+
+
+ f)pure virtual function  
+
+  问题1： 分析张三同学、李四同学、王五同学...抽象出共性：属性和行为 class CStudent{...};
+    class keyboard{//...};
+    class screen{//...};
+    class printer{//...};
+    class mouse{//...};
+    结果发现：有相同的属性和操作，为了尽可能代码重用，就在上面几个类的基础上泛化出一个父类device，将公共数据和接口放在基类。
+    class device{//公共数据和接口};
+    class keyboard : public device
+    {//...};
+    class screen : public device
+    {//...};
+    class printer : public device
+    {//...};
+    class mouse : public device
+    {//...};
+
+    class CStudent{....};
+    CStudent zhangsan("张三"，22，‘M’);
+
+     decice m;  //语义错误 no compliant
+ 
+   有时，基类只是一种抽象的概念，是人为地虚构出来的。它并不和具体的事物相联系。怎么样从语法角度来刻划这种特性呢？
+  
+  问题2：unit three\ Polymorphism\pure virtual function.cpp
+  shape s;  //no compliant
+
+  问题3：
+  MH航空公司设计的飞机继承体系。该公司开始只有A型和B型两种飞机，两者都以相同方式飞行。因此MH设计出这样的继承体系：
+class Airport { ... };                     // represents airports
+class Airplane {
+public:
+    virtual void fly(const Airport& destination);
+};
+
+void Airplane::fly(const Airport& destination)
+{
+  default code for flying an airplane to the given destination
+}
+class ModelA: public Airplane { ... };
+class ModelB: public Airplane { ... };
+  很好，代码重用。
+
+  几年以后，决定购买一种新式C型飞机，C型和A型以及B型的飞行方式不同。
+class ModelC: public Airplane {
+  ...        // no fly function is declared
+};
+由于急着让新飞机上线服务，竟忘了重新定义其fly函数.
+
+吉隆坡机场控制中心：
+Airport　北京(...);            
+Airplane *pa = new ModelC（＂ＭＨ３７０＂）;
+pa->fly(北京);         // calls Airplane::fly()  飞机去哪儿了
+
+问题不在Airplane::fly有缺省行为，而在于C型在未明白说出“我要”的情况下就继承了该缺省行为。
+
+目标：基类提供缺省实现，派生类必须重新实现。否则，派生类不能创建对象
+
+解决方法：纯虚函数/抽象基类
+  
+   1)virtual function: 基类与派生类有同名操作，派生类可以有自己的实现（继承接口），也可以没有（继承接口和实现）。
+   2)pure virual function: 基类与派生类有同名操作，派生类必须有自己的实现（只继承接口）。
+    基类的纯虚函数既可以有函数体（缺省实现），也可以不提供函数体。 
+
+
+【实现了的纯虚函数】
+class Airplane {
+public:
+  virtual void fly(const Airport& destination) = 0;
+  ...
+};
+
+void Airplane::fly(const Airport& destination)     // an implementation of
+{       // a pure virtual function  default code for       flying an airplane to the given destination
+}
+
+class ModelA: public Airplane {
+public:
+  virtual void fly(const Airport& destination)
+  { Airplane::fly(destination); }
+  ...
+};
+class ModelB: public Airplane {
+public:
+  virtual void fly(const Airport& destination)
+  { Airplane::fly(destination); }
+  ...
+};
+class ModelC: public Airplane {
+public:
+  virtual void fly(const Airport& destination);
+  ...
+};
+
+void ModelC::fly(const Airport& destination)
+{
+  code for flying a ModelC airplane to the given destination
+}
+
+  【没有实现的纯虚函数】unit three\ Polymorphism\pure virtual function.cpp
+    所有Shape对象都应该是可绘制的，不同的图形对象绘法肯定不一样。shape class无法为此函数提供合理的缺省实现。
+
+10）Abstract class
+   Shape　is a abstract
+   Shape  m; //complime-time 语义错误，因为它不对应任何一个具体存在的对象
+   
+    Shape fun(Shape d)  //不能创建抽象类的实例
+    {
+          //...
+    }
+    Shape* fun(Shape *pd)  
+    {
+        screen s;      
+        return &s;   //返回局部对象的地址，错
+    }
+    
+    Shape* fun(Shape *pd)  
+    {
+        pd =  new Circle;
+        return pd;
+    }
+    
+    Shapee& fun()  //返回局部对象的引用，错
+    {
+        Rectangle r;
+        return r;
+    }
+    Shape& fun(Shape& s)  //ok
+    {
+        //..
+        return s;
+    }
+    
+
+   Shape *pd = NULL;
+   initialize(pd);
+   
+    void initialize(Shape* pd)  //语法正确,but pd是形参，局部的
+    {
+        pd =  new Circle;
+    }
+    
+    void initialize(Shape* &pd)  //good style
+    {
+        pd =  new Circle;
+     }
+
+    initialize(&pd);
+    void initialize(Shape** pd)
+    {
+        *pd =  new Circle;
+     }
+ 
+
+1)编译器自动生成的析构函数不是虚函数  unit three\ Polymorphism\pure virtual function.cpp
+
+
+12月27日 page167
+2) Never redefine a function's inherited default parameter value
+    绝不重新定义继承而来的缺省参数值   
+class Shape {
+public:
+  enum ShapeColor { Red, Green, Blue };  
+  virtual void draw(ShapeColor color = Red) const = 0; // all shapes must offer a function to draw themselves
+  ...
+};
+
+class Rectangle: public Shape {
+public:
+  // notice the different default parameter value — bad style!
+  virtual void draw(ShapeColor color = Green) const;
+  ...
+};
+class Circle: public Shape {
+public:
+  virtual void draw(ShapeColor color = Blue) const;
+  ...
+};
+
+Shape *ps;  
+ps = new Circle;
+ps->draw();  //virtual函数是动态绑定, call Circle::draw(Shape::Red)
+              but:缺省参数值却是静态绑定
+
+    虚函数是动态绑定而缺省参数值是静态绑定的。
+  
+3)成员函数中的虚函数；构造函数中的虚函数；
+
+   class A{
+   public :
+         virtual int f(int){....}
+   };
+   class B: public A{
+   public :
+         virtual int f(double){....}
+   };
+   A *pa = new B;
+   pa->f(1.0);
+
+
+
+
+    
+    
+
+
+
+ 
+
+

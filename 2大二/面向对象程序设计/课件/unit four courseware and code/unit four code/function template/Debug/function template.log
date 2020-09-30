@@ -1,0 +1,14 @@
+﻿生成启动时间为 2019/6/11 14:19:05。
+     1>项目“D:\浙大\2018~2019春夏\OOP\Code\unit four code\function template\function template.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         test.cpp
+     1>d:\浙大\2018~2019春夏\oop\code\unit four code\function template\test.cpp(18): error C2668: “Max”: 对重载函数的调用不明确
+                 d:\浙大\2018~2019春夏\oop\code\unit four code\function template\function_template.h(60): 可能是“int Max(int,int)”
+                 d:\浙大\2018~2019春夏\oop\code\unit four code\function template\function_template.h(54): 或       “int Max(char,int)”
+                 尝试匹配参数列表“(double, int)”时
+     1>已完成生成项目“D:\浙大\2018~2019春夏\OOP\Code\unit four code\function template\function template.vcxproj”(ClCompile 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.31

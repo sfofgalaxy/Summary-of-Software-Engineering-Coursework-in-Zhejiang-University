@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gun", "stack\stack.vcxproj", "{C6DCB9BA-9562-4D6C-BB15-855A56A5C325}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "about head", "about head\about head.vcxproj", "{B20C7FE2-6706-4E0F-B5E7-090AE853CD45}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "STL", "STL\STL.vcxproj", "{AECAAA0A-E0FC-4DEB-8077-1E857CCF875A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "namespace", "namespace\namespace.vcxproj", "{28197D90-A554-4B10-818D-E290CA79E82D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "action of head file", "action of head file\action of head file.vcxproj", "{E7CE3845-924A-40BA-BA28-1E843F6A4C97}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "测速测距代码", "测速测距代码\测速测距代码.vcxproj", "{4F24CA0A-84F5-4873-8970-5E5BF13B561C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gun struct", "gun struct\gun struct.vcxproj", "{5DA9EA4E-A610-4652-99BF-6950D4F4C788}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6DCB9BA-9562-4D6C-BB15-855A56A5C325}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C6DCB9BA-9562-4D6C-BB15-855A56A5C325}.Debug|Win32.Build.0 = Debug|Win32
+		{C6DCB9BA-9562-4D6C-BB15-855A56A5C325}.Release|Win32.ActiveCfg = Release|Win32
+		{C6DCB9BA-9562-4D6C-BB15-855A56A5C325}.Release|Win32.Build.0 = Release|Win32
+		{B20C7FE2-6706-4E0F-B5E7-090AE853CD45}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B20C7FE2-6706-4E0F-B5E7-090AE853CD45}.Debug|Win32.Build.0 = Debug|Win32
+		{B20C7FE2-6706-4E0F-B5E7-090AE853CD45}.Release|Win32.ActiveCfg = Release|Win32
+		{B20C7FE2-6706-4E0F-B5E7-090AE853CD45}.Release|Win32.Build.0 = Release|Win32
+		{AECAAA0A-E0FC-4DEB-8077-1E857CCF875A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AECAAA0A-E0FC-4DEB-8077-1E857CCF875A}.Debug|Win32.Build.0 = Debug|Win32
+		{AECAAA0A-E0FC-4DEB-8077-1E857CCF875A}.Release|Win32.ActiveCfg = Release|Win32
+		{AECAAA0A-E0FC-4DEB-8077-1E857CCF875A}.Release|Win32.Build.0 = Release|Win32
+		{28197D90-A554-4B10-818D-E290CA79E82D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28197D90-A554-4B10-818D-E290CA79E82D}.Debug|Win32.Build.0 = Debug|Win32
+		{28197D90-A554-4B10-818D-E290CA79E82D}.Release|Win32.ActiveCfg = Release|Win32
+		{28197D90-A554-4B10-818D-E290CA79E82D}.Release|Win32.Build.0 = Release|Win32
+		{E7CE3845-924A-40BA-BA28-1E843F6A4C97}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E7CE3845-924A-40BA-BA28-1E843F6A4C97}.Debug|Win32.Build.0 = Debug|Win32
+		{E7CE3845-924A-40BA-BA28-1E843F6A4C97}.Release|Win32.ActiveCfg = Release|Win32
+		{E7CE3845-924A-40BA-BA28-1E843F6A4C97}.Release|Win32.Build.0 = Release|Win32
+		{4F24CA0A-84F5-4873-8970-5E5BF13B561C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4F24CA0A-84F5-4873-8970-5E5BF13B561C}.Debug|Win32.Build.0 = Debug|Win32
+		{4F24CA0A-84F5-4873-8970-5E5BF13B561C}.Release|Win32.ActiveCfg = Release|Win32
+		{4F24CA0A-84F5-4873-8970-5E5BF13B561C}.Release|Win32.Build.0 = Release|Win32
+		{5DA9EA4E-A610-4652-99BF-6950D4F4C788}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5DA9EA4E-A610-4652-99BF-6950D4F4C788}.Debug|Win32.Build.0 = Debug|Win32
+		{5DA9EA4E-A610-4652-99BF-6950D4F4C788}.Release|Win32.ActiveCfg = Release|Win32
+		{5DA9EA4E-A610-4652-99BF-6950D4F4C788}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

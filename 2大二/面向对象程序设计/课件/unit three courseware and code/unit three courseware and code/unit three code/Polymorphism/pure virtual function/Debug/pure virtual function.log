@@ -1,0 +1,22 @@
+﻿生成启动时间为 2018/12/26 9:51:15。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Polymorphism\pure virtual function\pure virtual function.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\pure virtual function.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "..\virtual destructor\成员函数中的虚函数.cpp" "..\virtual destructor\构造函数中的虚函数调用.cpp" "pure virtual functions.cpp"
+         pure virtual functions.cpp
+         构造函数中的虚函数调用.cpp
+         成员函数中的虚函数.cpp
+         正在生成代码...
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\pure virtual function.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\pure virtual function.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\pure virtual function.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\pure virtual function.lib" /MACHINE:X86 "Debug\成员函数中的虚函数.obj"
+         "Debug\构造函数中的虚函数调用.obj"
+         "Debug\pure virtual functions.obj"
+     1>构造函数中的虚函数调用.obj : error LNK2005: _main 已经在 成员函数中的虚函数.obj 中定义
+     1>pure virtual functions.obj : error LNK2005: _main 已经在 成员函数中的虚函数.obj 中定义
+     1>D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\pure virtual function.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Polymorphism\pure virtual function\pure virtual function.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.25

@@ -1,0 +1,13 @@
+release/contrast.o
+release/histogram.o
+release/image.o
+release/luminance.o
+release/main.o
+release/menu.o
+release/open_image.o
+release/picture_mark.o
+release/saturate.o
+release/split.o
+release/water_mark.o
+release/zoom.o
+release/moc_menu.o

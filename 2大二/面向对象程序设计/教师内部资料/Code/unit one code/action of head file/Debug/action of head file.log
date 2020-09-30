@@ -1,0 +1,13 @@
+﻿生成启动时间为 2018/9/21 14:44:35。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit one code\action of head file\action of head file.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+         test.c
+     1>d:\浙大\2018~2019秋冬\oop\code\unit one code\action of head file\test.c(6): error C2011: “gun”:“struct”类型重定义
+                 d:\浙大\2018~2019秋冬\oop\code\unit one code\action of head file\test.c(2) : 参见“gun”的声明
+     1>d:\浙大\2018~2019秋冬\oop\code\unit one code\action of head file\test.c(14): warning C4013: “Max”未定义；假设外部返回 int
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit one code\action of head file\action of head file.vcxproj”(ClCompile 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.20

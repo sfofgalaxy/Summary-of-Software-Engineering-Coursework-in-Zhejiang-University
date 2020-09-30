@@ -1,0 +1,29 @@
+﻿Build started 2017/6/21 10:57:56.
+     1>Project "D:\浙大\2016~2017春夏\OOP\Code\unit four code\review\review.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\review.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Debug\review.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         d:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt fill.cpp MyObject.cpp test.cpp
+         test.cpp
+         MyObject.cpp
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\myobject.h(22): error C2662: 'MyObject::f' : cannot convert 'this' pointer from 'const MyObject' to 'MyObject &'
+                 Conversion loses qualifiers
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\myobject.h(28): error C2664: 'MyObject::g' : cannot convert parameter 1 from 'const MyObject' to 'MyObject &'
+                 Conversion loses qualifiers
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\myobject.h(30): error C2664: 'MyObject::g' : cannot convert parameter 1 from 'const MyObject' to 'MyObject &'
+                 Conversion loses qualifiers
+         fill.cpp
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\fill.cpp(21): error C2556: 'double Shape::error(void) const' : overloaded function differs only by return type from 'void Shape::error(void) const'
+                 d:\浙大\2016~2017春夏\oop\code\unit four code\review\fill.cpp(13) : see declaration of 'Shape::error'
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\fill.cpp(21): error C2371: 'Shape::error' : redefinition; different basic types
+                 d:\浙大\2016~2017春夏\oop\code\unit four code\review\fill.cpp(13) : see declaration of 'Shape::error'
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\fill.cpp(101): error C2143: syntax error : missing ';' before '}'
+     1>d:\浙大\2016~2017春夏\oop\code\unit four code\review\fill.cpp(145): error C2264: 'Shape::error' : error in function definition or declaration; function not called
+         Generating Code...
+     1>Done Building Project "D:\浙大\2016~2017春夏\OOP\Code\unit four code\review\review.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.59

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/bl-view-js.js"></script>
+    <script src="js/tdchange.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/book-view-style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bl-view-style.css">
+
+    <script language="JavaScript">
+        $.post("control/start_show.php",{
+            HT: "bl"
+        }, function (data, status) {
+            document.getElementById("bl-list-table-body").innerHTML = data;
+        });
+    </script>
+
+</head>
+<body>
+
+<!-- 模态框 -->
+
+<div class="modal fade" id="borrowModal" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">读者借书</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="borrow_book_modal_body modal-body">
+                <div>
+                    读者证号:&nbsp;<input type="text" class="borrow_book search-book" id="borrow_rid" onblur="cl()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label id="borrow_reader_right"></label>
+                </div>
+                <div>
+                    条形码号:&nbsp;<input type="text" class="borrow_book search-book" id="borrow_bcode">
+                </div>
+                <div>
+                    应还日期:&nbsp;<input type="date" class="borrow_book search-book" id="borrow_deadline" value="">
+                </div>
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="borrow_book_button" onclick="borrow_book()" data-dismiss="modal">确认</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 模态框2 -->
+
+<div class="modal fade" id="bl_detail_Modal" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align: center">续借和罚金</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body" id="bl_modal1">
+                <div>
+                    <img id="bl_photo" src=""><br>
+                    <label>读者姓名: </label><label id="bl_reader_name"></label>
+                </div>
+                <br>
+                <div>
+                    <label>本书到期日期为:</label><label id="bl_deadline"></label><br>
+                    <label id="bl_renew"></label>
+                </div>
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-secondary" onclick="">确定</button>-->
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-box">
+
+    <div class="menu-box">
+        <div id="brand">
+            <div id="brand_div" onclick="window.location.href='index.html'"><div id="temp_div"></div><a id="brand_a">图书馆首页</a></div>
+        </div>
+        <div style="height: 10%"></div>
+        <nav class="nav flex-column" id="nav-list">
+            <a class="nav-link active" href="book.html"><div class="nav-list-label"><i class="icon-book"></i>&nbsp;&nbsp;&nbsp;图书管理</div></a>
+            <a class="nav-link" href="reader.html"><div class="nav-list-label"><i class="icon-user-md"></i>&nbsp;&nbsp;&nbsp;读者管理</div></a>
+            <a class="nav-link" style="background-color: #646464" href="#"><div class="nav-list-label"><i class="icon-edit"></i>&nbsp;&nbsp;&nbsp;借还图书</div></a>
+            <a class="nav-link" href="recommend.html"><div class="nav-list-label"><i class="icon-inbox"></i>&nbsp;&nbsp;&nbsp;荐购管理</div></a>
+            <a class="nav-link" href="history.html"><div class="nav-list-label"><i class="icon-calendar"></i>&nbsp;&nbsp;&nbsp;还书记录</div></a>
+        </nav>
+        <div class="menu-footer"><p>Copyright © 2017-2020 Eryu.<br>All rights reserved. </p></div>
+    </div>
+
+
+
+    <div class="content-box">
+        <div class="book-view-header">
+
+            <div id="book_retrieve_form_div">
+                <form name="book_retrieve_form" enctype="multipart/form-data">
+                    <input type="text" class="search-book" id="input_rid" placeholder="读者证号" name="Rid">&nbsp;
+                    <input type="text" class="search-book" id="input_barcode" placeholder="条形码号" name="barcode">&nbsp;
+                    <!--<input type="text" class="search-book" id="input_isbn" placeholder="ISBN" name="isbn">&nbsp;
+                    <input type="text" class="search-book" id="input_rname" placeholder="读者姓名" name="reader_name">&nbsp;
+                    <input type="text" class="search-book" id="input_bname" placeholder="书名" name="book_name">&nbsp;-->
+
+
+
+                    <input type="button" class="search-book retrieve_button" id="retrieve_bl_button" value="检索"></input>
+                </form>
+            </div>
+
+            <div id="add-book-button-div">
+                <input type="button" id="borrow_button" class="search-book retrieve_button btn-primary" value="读者借书" data-toggle="modal" data-target="#borrowModal">
+                </input>
+            </div>
+        </div>
+
+
+        <div class="book-view-content" id="book-view-cocntent">
+
+            <div style="widtd: 100%; height: 30px"></div>
+
+
+            <div>
+                <table class="table table-hover table-in-all tbcontainer" id="tbcontainer">
+                    <thead>
+                    <tr>
+                        <th scope="col">读者证号</th>
+                        <th scope="col">条形码号</th>
+                        <th scope="col">借出日期</th>
+                        <th scope="col">应还日期</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table table-hover" id="bl-list-table-body">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

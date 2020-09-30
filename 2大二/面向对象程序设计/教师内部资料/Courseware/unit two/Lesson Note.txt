@@ -1,0 +1,493 @@
+(1)About variable and type
+IN C:
+// 计算某个日期对应该年的第几天  
+int day_of_year(int year, int month, int day)
+{
+    int leap;
+    int tab[2][13] = {    // 数组初始化，将每月的天数赋给数组  
+        {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, 
+        {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31} 
+    };
+
+    // 判断year是否为闰年，当year是闰年时，leap=1；当year是非闰年时，leap=0  
+    leap = (year % 4 == 0 && year%100!=0 || year%400==0); 
+
+    // 计算天数  
+    int k;
+    for(k = 1; k < month; k++)
+       day = day + tab[leap][k];
+
+    return day; 
+}  
+
+type function_name(parameter list)
+{
+    对象声明语句；
+    执行语句；
+}  
+  
+struct STUDENT {
+      int number;
+      char name[81];
+};
+
+In C:
+struct STUDENT zhangsan;
+hope:
+STUDENT zhangsan;
+int age;
+
+(2)尽可能使用户定义的类型与系统预定义类型相一致，比如:
+int a,b,c;
+cin >> a >> b;
+c = a + b;
+cout<<"a+b=" << c << endl;
+
+complex a,b,c;
+cin >> a >> b;
+c = a + b;
+cout <<"a+b=" << c << endl;
+这种一致性还表现在可以为用户定义的类型提供初始化、赋值以及转换规则等。
+
+(3)如何使其有更好的性能？程序更安全？更健壮?
+
+方法1：function prototype 
+IN C Compiler:
+ 
+#include <stdio.h>
+void main()
+{
+    f(1.1,2,3);  
+}
+
+int f(int a)
+{
+   return a*2;
+}
+
+Function Signature
+1)How to use C library in C++ program?
+2)How to use C++ library in C program?
+
+10月25日 page42
+(4)Overloading VS. Default arguments
+   class complex{
+   public:
+    	complex();
+	complex(double r);
+	complex(double real, double imag);
+
+   //...
+  };
+//or
+   class complex{
+   public:
+        complex(double real=0.0, double imag=0.0)
+        {   
+            real_part = real;
+            imaginary_part = imag;
+        }
+   //...
+   };
+
+必须使用重载函数:
+   class A{
+   private:  int i;
+   public:
+         //有缺省值，但算法依赖于形参的值
+         A()  
+         {
+             i = 1;
+         }
+         A(int ii)
+         {
+            i = f(ii); 
+         }
+         //or 意义不大
+         A(int ii=0)   //前提：f(0) != 1
+         {
+            if (0 == ii)
+               i = 1;
+            else
+               i = f(ii);
+         }
+   };
+
+
+
+(5)inline function
+   a.inline关键字的正确使用
+   inline 是一种“用于实现的关键字”，而不是一种“用于声明的关键字”。
+   关键字inline 必须与函数定义体放在一起才能使函数成为内联，仅将inline 放在函数声明前面不起任何作用。
+   
+   一般情况下：
+   inline void Foo(int x, int y); //内联函数声明
+   inline void Foo(int x, int y)  //内联函数定义
+   {
+      //......
+   }
+
+   等价于：
+   而如下风格的函数Foo 有可能成为内联函数：
+   void Foo(int x, int y);
+   inline void Foo(int x, int y) // inline 与函数定义体放在一起
+   {
+       //......
+   }
+
+   but:
+   如下风格的函数Foo肯定不能成为内联函数：
+   inline void Foo(int x, int y); // inline 仅与函数声明放在一起
+   void Foo(int x, int y)
+   {
+      //......
+   }
+
+   b.inline函数原代码对编译器而言必须是可见的，以便它能够在调用点内展开该函数。
+   (1)
+   //file.h
+   inline int f(int i);
+   
+   //file.cpp-->file.obj
+   inline int f(int i)     
+   { 
+       return i+8;
+   }
+
+   //main
+   #include "file.h"
+   void main()
+   {
+       cout << f(9);  //编译器忽略inline，是普通函数调用
+   }
+
+   解决方法：把内联函数的定义放在头文件里。
+
+   (2)
+   //main
+   inline int f(int i);  //内联函数声明
+
+   int main()
+   {
+      cout << f(9);  //编译器忽略inline，是普通函数调用
+   }
+   inline int f(int i) //内联函数定义
+   { 
+       return i+8;
+   }   
+   解决方法：
+
+   c.建议把inline函数的定义放到头文件中。在每个调用该inline函数的文件中包含该头文件。这种方法保证对每个inline函数只有一个定义，且程序员无需复制代码，并且不可能在程序的生命期中引起无意的不匹配的事情。
+
+   //a.h
+   #ifnedf A_H 
+   #define A_H
+   //can be：
+   extern int b;     //variable  declaration
+   #define size 100  //constant definition
+   extern float power(int x);      //function declaration
+   inline float power(int x)   //inline function definition
+   {     
+	return x*x; 
+   }
+  
+   class B;   //class declaration
+
+   class A { public : B& GetB( void ) const; }   //class definition
+   class B { public: A* CreateA( void ) const; }
+
+   //template函数和template类的所有定义都应该写在.h文件
+
+   //can't be：  
+   int max(int x, int y)      //function definition
+   {
+       return x>y ? x : y;
+   }
+ 
+   int a;       //variable definition
+ 
+   #endif
+
+   Parasoft C/C++ test 是Parasoft针对C/C++的一款自动化测试工具。
+   C/C++ test支持编码策略增强，静态分析，全面代码走查，单元与组件的测试，为用户提供一个实用的方法来确保其C/C++代码按预期运行。
+   程序静态分析（Program Static Analysis）是指在不运行代码的方式下，通过词法分析、语法分析、控制流分析等技术对程序代码进行扫描，验证代码是否满足规范性、安全性、可靠性、可维护性等指标的一种代码分析技术。
+
+  e.若把一个类的成员函数定义成inline，则这个inline成员函数必须定义在head文件中。
+   
+  d.所有编译器自动生成的函数都是inline函数，所以，尽可能用编译器自动生成的函数。
+
+in C: 
+
+#ifndef _SPD_BASE_H_INCLUDED_
+#define _SPD_BASE_H_INCLUDED_
+
+#include "Spd_lib.h"
+
+#define     M_2_MM          1000            /*m到mm单位转换*/
+#define     MM_2_UM         1000            /*mm到um单位转换*/
+#define     S_2_MS          1000            /*s到ms单位转换*/
+#define     NOP                             /*空*/
+#define     RAW_SPEED_MAX_CYCLE   10        /*速度数组的最大长度*/
+#define     RELOC_INFO_MAX_CYCLE  12        /*重定位信息数组的最大长度*/
+#define     MAX_DR_PACK_NUM     20          /*每周期可能的最大雷达报文个数*/
+#define     MAX_THEORY_SPEED    0x7FFFFFFF  /*理论最大速度*/
+#define     MAX_THEORY_MOV      0x7FFFFFFF  /*理论最大位移*/
+#define     MIN_THEORY_MOV      0x80000000  /*理论最小位移*/
+
+#define U8BOUNDARY 256U /*8位无符号数溢出边界*/
+#define MAX_U32 0xFFFFFFFFU /*最大的32位无符号数*/
+#define MAX_I32 0x7FFFFFFF  /*最大的32位有符号数*/
+#define ONE 1U   /*处理边界溢出时使用的1-例：0xFF+1=0*/
+
+#endif
+
+
+6)The constructor initializer list
+  尽可能使用The constructor initializer list进行初始化
+class A
+{
+public:
+    A()
+    {
+        s1 = "hello";
+        s2 = "world";
+    }
+private:
+    string s1, s2;
+};
+构造函数会在系统内部生成初始化代码，如：
+A(): s1(), s2()
+{
+    s1 = "hello";
+    s2 = "world";
+}
+
+A m;   call string()初始化s1-->string()初始化s2-->A()-->string::operator=(...)-->string::operator=(...)
+
+//良好的格式
+class A
+{
+public:
+    A(): s1("hello"), s2("world")
+    { }
+private:
+    string s1, s2;
+};
+
+7)const member function
+a)void Array::print();
+  void Array::print() const;
+  是重载关系，可以只保留const版的，但具体情况要具体分析。如下面两个都要保留
+  int& Array::operator[]( const unsigned suffix );
+  int  Array::operator[]( const unsigned suffix) const; 
+    
+  Array a(5);
+  a[0] = 10;    //call int& Array::operator[]( const unsigned suffix );
+  
+  const Array b(5);
+  for(int i=0; i< b.getsize(); i++)
+      cout << b[i];  -->b.operator[](i)   
+//call int Array::operator[](const unsigned suffix ) const;
+ 
+b)没有const global function，也没有const static member function， 只有const function member。
+  通常那些只输出的成员函数定义成该类的const，且只需保留const function member。
+  Array a(10);
+  a.print();      //call void Array::print() const;
+  const Array b(5);
+  b.print();     //call void Array::print() const;
+  
+  for (int i=0;i<10 ;i++)
+     a[i] = 10;  //call int& Array::operator[]( const unsigned i ) ;
+
+  
+  ostream& operator<<(ostream& out, const Array& m)
+  {
+      const int length = m.getsize(); 
+      for(int i=0; i<length; i++)
+        cout << m[i] ;  // call int Array::operator[](const unsigned i) const;
+  }
+
+11.8 page110
+8)static member function
+  使用方法：
+class FileWriter
+{  
+public:		
+	static void writeStringToFile(const char *strMessage)
+	{
+	    cout << "write strmessage to file......" << endl;
+	}
+};
+class ConsoleDisplayer
+{
+public:
+	static void displayString(const char *strMessage)
+	{
+	    cout << "display strMessage to console......" << endl;
+	}
+};
+
+class FileLogAppender   
+{
+public:							
+	void writeLog(const char *log)  
+	{
+		FileWriter::writeStringToFile(log); 
+                //FileWrite f;
+                //f.writeStringToFile(log); 
+	}
+};
+
+class ConsoleLogAppender   
+{
+public:            
+	void writeLog(const char *log)  
+	{
+		ConsoleDisplayer::displayString(log);  
+	}
+};
+ 
+9)引用
+a)引用符和地址符
+  int i;
+  int &ii = i;  //引用符
+  int *p = &i;  //地址符
+
+b)reference VS pointer
+   int i, j;
+   int *p = NULL;
+   p = &i;
+   p = &j;
+   int &q = NULL;  //error
+   int &q = i;
+   q = j;
+   int &q = j;     //error
+
+correct
+int a;
+const int b = 100;
+const int *p = &a;
+*p++ = 1;  //*p = 1; p++;
+p = &b;
+
+const int &ra=a;
+ra++; 
+a++;
+b++;
+
+c)函数只能返回一个l-value
+int& f()
+{
+	int i = 0;
+	return i + 1;  //or return 1;  error
+}
+
+10)拷贝构造函数
+ in C:
+      int a=0;
+      int b = a;  // int b(a);
+ in C++:
+      complex a,  b(1.1), c(1.1, 2.2);
+      complex m(a);//be equal to complex m = a;   
+         
+         
+
+//argument-passsing  by valus
+//开销：sizeof(Object) && call copy-constructor
+int f(Object m)  
+{
+   //..
+}
+
+//argument-passsing  by address
+//开销：sizeof(p) 
+int f(const Object *p)  
+{
+   //..
+}
+
+//argument-passsing  by reference
+//开销： 0
+int f(const Object &m)  
+{
+   //..
+}
+
+
+11月19日page139
+a)Default copy-constructor
+  生成策略：Bitcopy
+            有指针成员的直接覆盖，会造成通一块区域释放2次的错误。
+
+C++中对象的隐式拷贝是导致很多性能问题和bugs的根源，拷贝构造函数降低了代码的可读性，相比按引用传递(pass-by-reference)，跟踪按值传递(pass-by-value)的对象更加困难。
+不幸的是，不主动声明它们，编译器会自动生成，而且是public的。
+
+有些类并不需要一个拷贝构造函数或赋值操作，
+student zhangsan("张三", 20 ,"男");
+student lisi(zhangsan);   //即使语法正确，语义错误，不该通过编译
+zhangsan = lisi;          //不该通过编译
+
+
+b)如何阻止？
+  将拷贝构造函数声明为private(可以不予实现)
+  不提供私有的拷贝构造函数实现，那些不慎调用的代码会获得一个编译错误（complie-time error)
+  由于成员函数和friend函数还是可以调用私有的成员函数。所以私有成员函数不提供实现，有时会获得一个连接错误(linkage error)
+
+
+/*pass-by-value is not allowed*/
+class HomeForSale {
+public:
+	HomeForSale(){ f();}  //linkage error，binding不到函数体
+	void mFunc(); 
+private:
+	HomeForSale(const HomeForSale&);     // declarations only        
+	HomeForSale& operator=(const HomeForSale&);
+        int f();
+};
+
+void oneFunction(HomeForSale s)
+{
+	//..
+}
+
+HomeForSale m;
+m.mFunc();       //linkage error，binding不到函数体
+oneFunction(m);  //complie-time error,此处错误的原因是，不能调用私有的拷贝构造函数
+
+
+11)about Memory manage
+
+a)RESOURCE_LEAK
+    资源泄漏（内存泄漏）指变量在出了自己的作用范围后，占用的资源仍然驻守在内存里，没有被释放。
+ 
+b)Use objects to manage resources以对象管理资源 
+     将资源抽象为类，用局部对象来表示资源，把管理资源的任务转化为管理局部对象的任务。
+     例如，我们可以将文件句柄FILE抽象为FileHandle类：
+
+class FileHandle {
+public:
+    FileHandle(char const* n, char const* a) 
+    { 
+        p = fopen(n, a); 
+    }
+    ~FileHandle() 
+    { 
+        fclose(p); 
+    }
+private:
+    // 禁止拷贝操作
+    FileHandle(FileHandle const&);
+    FileHandle& operator= (FileHandle const&);
+    FILE *p;
+};
+
+void UseFile(char const* fn)
+{
+    FileHandle file(fn, "r"); 
+    // 在此处使用file...
+    // 超出此作用域时，系统会自动调用file的析构函数，从而释放资源
+    FileHandle file2("myfirst.cpp", "r");
+    file = file2;  //compile-time error
+}
+
+

@@ -1,0 +1,26 @@
+﻿生成启动时间为 2018/12/19 9:29:37。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Polymorphism\virtual destructor\virtual destructor.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\virtual destructor.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\virtual destructor.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt virtualDestructor.cpp
+         virtualDestructor.cpp
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\polymorphism\virtual destructor\virtualdestructor.cpp(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\polymorphism\virtual destructor\virtualdestructor.cpp(34): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\visual studio 2010 ultimate\vc\include\string.h(105) : 参见“strcpy”的声明
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\virtual destructor.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\virtual destructor.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\virtual destructor.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\virtual destructor.lib" /MACHINE:X86 Debug\virtualDestructor.obj
+         virtual destructor.vcxproj -> D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\virtual destructor.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Debug\virtual destructor.exe;#1" /manifest "Debug\virtual destructor.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“Debug\virtual destructor.unsuccessfulbuild”。
+         正在对“Debug\virtual destructor.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Polymorphism\virtual destructor\virtual destructor.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.96

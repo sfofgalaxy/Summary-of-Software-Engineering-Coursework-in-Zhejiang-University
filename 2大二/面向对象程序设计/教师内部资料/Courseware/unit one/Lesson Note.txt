@@ -1,0 +1,367 @@
+一、平时作业、课件/学期资料下载、期末考试 
+    网址：https://pintia.cn
+    要求学生自己注册（建议用你的浙大邮箱地址），并在个人中心（点击个人昵称可进入）通过教学班验证码绑定学号，才可以看到作业。
+    验证码 530441  
+
+二、助教： 浙大计算机学院2018研究生 21821033 王成蒙 905028243@qq.com
+
+三、课程教学班QQ群：
+
+  
+本周作业：
+a)project前期准备工作
+   1)组队4~5人  建立微信群
+   2)某IDE的安装、使用
+   3)选择某一平台，学习或平台的特性，或第三方库的使用（输入/输出/图形界面等）
+   4)选择某一题目，完成中期project文档。
+b)exercise1.doc
+  完成时间3周
+
+一、Four computer technology
+  1)Object-Oriented Programming
+   Analysis:: Undergraduate Graduate PhD
+
+   #include "CUndergraduate.h";
+   #include "CGraduate.h";
+   #include "CPhd.h";
+   CUndergrduate  zd2013u[2000]; //CUndergraduateis a Abstract Data Types
+   CGraduate zd2013g[2100];
+   CPhd zd2013p[200];
+   for(int i=0; i<2000;i++)
+      printf("%d", zd2013gu[i].Total_Credits() );
+        
+  Object-Oriented Programming method is :identify object(What attributes? what functions?)
+                                         Creating object
+                                         using object
+  #include <string>
+  string name;
+  
+ 2)Generic Programming
+   In C:
+   void sort(int a[], int size)
+   {
+     //...
+   }
+   void sort_d(double a[], int size)
+   {
+     //...
+   }
+  
+   In C++: function template
+   template <typename T> 
+   void sort(T a[], int size)
+   {
+     //...
+   }
+  
+   int a[100];
+   //input 100 integers into a;
+   sort<int>(a, 100);
+   string name[50];
+   //input 50 names into name;
+   sort<string>(name, 50);
+
+二、Selection of programming language 
+C/C++：Performance is known
+Java  Cross-platform:  "write once, run anywhere" (WORA):  meaning that code that runs on one platform does not need to be recompiled to run on another.
+                     32 bits Machine     64 bits Machine
+
+Java Source Code --Java compiler(For virtual machines)-->Intermediate code-->即时翻译器--->某平台本地代码
+
+C# 与 Java相似度90%(托管代码)
+unsafe{
+//非托管代码
+}
+C++/C目前坚守的阵地：服务器端基础架构（例如淘宝OceanBase是C++写的），PC客户端的3D游戏（DirectX是提供COM/C++接口），某些嵌入式上的实时程序，其他Java/C#/Python未能涉足的领域。
+
+2)compiler or IDE的选择
+  早期：Editor + Lib + Complier + Linker
+  不同的平台有不同的C/C++编译器或IDE,在相同的平台上也有各种各样的C/C++编译器或IDE，它们各有各的特点。比如：
+Windows下的C/C++编译器: 
+	ANSI C/C++ 
+	Microsoft C/C++ 
+	Turbo C/C++(16位的编译系统，已过时)
+	Borland C/C++
+	Dev C/C++(采用的是gcc编译器,号称99.9%符合ANSI 标准,而且小巧可爱。但很多人说不太好用 )
+	Visual C++(VC 6.0 VC .net，Visual C/C++太庞大, 而且他有很多地方与ANSI标准不兼容)
+   占优的应该是操作系统的优势、微软的商业策略
+	Intel C/C++(Intel自家出的 C/C++ Compiler 有Windows版本/Linux 版本)/
+
+Unix下的C/C++编译器: Windows下的很多编译器都有相应的Unix版本.
+
+    GNU/gcc C/C++编译器
+    Unix系统下的Gcc（GNU C/C++ Compiler）是GNU推出的功能强大、性能优越的多平台编译器，是GNU的代表作品之一。gcc是可以在多种硬体平台上编译出可执行程序的超级编译器，其执行效率与一般的编译器相比平均效率要高20%~30%。
+    GNU: 是“GNU's Not Unix”的递归缩写。GNU计划，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。GNU软件可以自由地“使用、复制、修改和发布”。
+    
+   MinGW (gcc for Window$) 
+   GCC在windows下的移植版本，几乎支持所有的Win32 API。它所连接的程序，不需要任何第三方库就可以运行了。
+简介：开源、GNU/gcc 编译器的 Window$ 版、32 位、编译代码优化、GCC 支持平台最多、支持 C99/C++98 标准 
+官方网站：http://www.mingw.org/ 
+下载专页：http://sourceforge.net/projects/mingw/ 
+直接下载：http://prdownloads.sourceforge.net/mingw/MinGW-3.2.0-rc-3.exe 
+
+
+
+IDE:   
+VC 6.0(Visual Studio 6.0或Visual C++ 6.0)  宿主语言：C++，对标准C++支持度不是很高。
+VC .NET(Visual Studio .NET) 2010  宿主语言：C#  
+JBuilder  宿主语言：Java
+MinGW Developer Studio
+Eclipse
+
+
+三、库文件
+   a)语言本身提供的库文件(Graphics.h):
+    Turbo C提供的,图形函数以实现图形程序设计，所有图形函数的原型均在graphics. h中)
+   b)操作系统功能调用(API函数)(dos.h/bios.h/windows.h......)
+    平台特性。在WINDOWS平台下，WINDOWS为我们提供了一系列丰富的API函数。
+   c)第三方提供的、经典的C/C++库
+
+   1)wxWidgets开源软件(跨平台的GUI库)
+    wxWidgets是一个跨平台的软件开发包。它诞生于1992年，最初的名字是wxWindows，但由于Microsoft的抗议，在2004年改名为wxWidgets。它最初是被设计成跨平台的GUI软件开发包，但后来随着越来越多的人参与进来，为wxWidgets加入了许多非GUI的功能，如多线程(MultiThread)、网络(Network)等。并且从最初的只支持C++语言，逐渐发展成为支持数种语言（如Python、Perl、C#、Basic等）。因此，现在的wxWidgets已经不再是单纯的跨平台的GUI软件开发包，而是一个可以支持多种操作系统平台的能够在多种语言中使用的通用跨平台软件开发包。
+
+   2)QT
+    是诺基亚开发的一个跨平台的C++图形用户界面应用程序框架。它提供给应用程序开发者建立艺术级的图形用户界面所需的所用功能。Qt是完全面向对象的，很容易扩展。
+
+   3)怎么选择
+     目前支持C/C++的软件开发包非常多，比较有名的除了wxWidgets外，还有一些其它的软件开发包，如MFC、ACE等。即然有这么多开发包，那么我们怎么选择呢？在给出答案之前，让我们首先来看一看上述的三种软件开发包的特性。
+1. MFC
+   MFC是Microsoft提供的软件开发包。MFC虽然十分强大、也十分庞大，但它只能运行在Windows下运行。
+2. wxWidgets提供了简单易用的API，让你在多平台上编写GUI应用程序。 使用相应的针对你的平台（Windows/Unix/Mac）的库和编译器（几乎所有流行的C++编译器）进行连接（link），你的应用程序会采用与那个平台相对应的外观。 在强大的GUI功能方面，wxWidgets提供有： 在线帮助、网络编程、流、剪贴板拖拉、多线程、各种流行格式图像的装载和保存、数据库支持、HTML浏览和打印等许许多多的内容。  
+3. QT它和wxWidgets类似。
+4. ACE
+   ACE虽然是免费开源的，但是它没有提供GUI功能。
+   
+  建议：最快的编译器gcc + 最前沿的IDE：Eclipse + 最流行的支持C++的软件开发包：wxWidgets or QT
+
+
+四、面向对象系统的三个特性
+
+string(注意这里不是string.h string.h是C字符串头文件)   string.obj(二进制)
+
+//应用程序
+#include <string>
+#include <iostream>
+using namespace std;
+
+void main() 
+{
+    string s1 = "张三";
+    string s2 = "李四";
+    cout << "s1 : " << s1 << endl;
+    cout << "s2 : " << s2 << endl;
+    s1.swap(s2);
+    cout << "s1 : " << s1 << endl;
+    cout << "s2 : " << s2 << endl;
+
+}
+ 
+
+3.19 page57
+1)exercise1.doc
+ 
+2)first reading：Introduction to Programming with C++
+                 chapter 9 Objects and Classes
+                        9.4 constructors
+                        9.5 Constructing and Using Objects
+Requirements：
+what is constructor ?
+      when to call?
+      Features? 
+      What is Default constructors
+完成时间：2周
+
+一、C++程序架构： 类(className.h/className.cpp)
+                  源文件(dcs.cpp--全局函数定义、静态全局函数定义、全局变量定义、静态全局变量定义)
+                  头文件(dcs.h--外部对象声明、函数声明、
+                                            类定义、结构的定义、类模板定义、内联函数的定义、
+                                            typedef、枚举类型定义、常量的定义)
+二、头文件什么时候使用?
+    //oneFILE.CPP
+    #include "header.h"
+
+    //otherFILE.cpp
+    #include "header.h"
+
+虽然函数、变量的声明都可以重复，所以同一个声明出现多次也不会影响程序的运行，但它会增加编译时间，所以重复引用头文件会使浪费编译时间；而且，当头文件中包含类的定义、模板定义、枚举定义等一些定义时，这些定义是不可以重复的，必须通过一定措施防止重复引用.  (about_head:: test.cpp class A重复定义)
+
+
+三、头文件包含顺序
+    《Thinking In C++》--从最特殊到最一般
+    《Google C++ 编程风格指南》--从一般到特殊的原则。
+     
+    C库的head file、C++库的head file、其他库的的head file、项目内的的head file。
+    
+假设某个CPP如下：
+#include <iostream>
+#include "myclass.h"
+
+编译器的分析过程
+先分析<iostream>，这个没有错误，OK继续分析
+分析"myclass.h"，发现编译错误，终止分析并报错。
+
+
+如果我们把上述顺序调换，变为：
+#include "myclass.h"
+#include <iostream>
+
+那么编译器先分析"myclass.h"，发现编译错误，终止分析并报错。明显可以看出第二种方式能够令分析速度加快。
+把最容易出错的头文件(也就是最特殊的头文件)首先#include，这有点像短路求值(if ( 0 && 1 ))，一旦出错，后面就不必再分析。
+
+exercise2.doc::《Google C++ 编程风格指南》和《C++编程思想》倡导的包含头文件的顺序各有什么优点，首要解决的什么问题？什么是头文件依赖，举例说明。
+
+
+三、名字空间
+   1.标识符采用英文单词或其组合，应当直观且可以拼读，可望文知意，用词应当准确。
+     int train_length;  //UNIX风格
+     int trainLength;   //windows风格
+
+   2.大型的项目中，不对全局的名字空间进行控制可能会引发问题，因此程序员通常建立复杂冗长的名字来避免冲突。在C＋＋中，你可以用namespace关键词来将名字空间分成可管理的小片。如struct、class、enum、union一样，关键词namespace也将其管理的名字放在一个特定地方，其唯一的作用就是建立一个新的名字空间。
+
+【规则】（推荐）最好不要使用using 指示符，以保证命名空间下的所有名
+称都可以正常使用；如果要用，也只在.cpp 文件、.h 文件的函数、方法或类中。
+
+   3. 
+    a)"global scope"实际是一个顶层的namespace，其它namespace都在它下面嵌套定义。
+    b) namespace内的函数/常量在头文件中声明，而定义放在.cpp文件中。声明和定义时，都要使用namespace关键字。
+    c) 可以在global scope中定义的标识符，都可以在namespace中定义
+    d) namespace中的函数/变量也遵守 “先定义（或声明），后调用” 的规则，一个namespace可以出现多次定义，新的定义将以增量的方式加到该namespace中
+
+
+四、输入输出库__<iostream>和<stdio.h> 的比较
+    考虑iostream和stdio程序库，对于C++程序员来说两者都是可以使用的。
+iostream程序库与C中的stdio.h相比有以下几个优点:
+类型安全－－要做C++ I/O的对象，编译器会静态地事先得知其型别，而不是动态地由　“%”　一栏查知。　 
+不易出错－－冗馀的信息会增加错误的机会。C++的I/O就不需要多馀的   “%”。　 
+延展性－－C++的I/O机制可在不改动原有程序代码的情况下，就加进使用者新设计的类型。　
+易读性 
+
+在效率方面，iostream程序库总是不如stdio.h，因为stdio.h产生的执行文件与iostream产生的执行文件相比尺寸小而且执行速度快。
+在标准化的过程中，iostream 库在底层做了很多修改，所以对那些要求最大可移植性的应用程序来说，会发现不同的厂商遵循标准的程度也不同。
+iostream 库的类有构造函数，而<stdio.h>里的函数没有，在某些涉及到静态对象初始化顺序的时候，如果可以确认不会带来隐患，用标准C 库会更简单实用。
+
+iostream和stdio.h之间性能的对比不过是一个例子，这并不重要，重要的是具有相同功能的不同的程序库在性能上采取不同的权衡措施，所以一旦你找到软件的瓶颈（通过进行profile ），你应该知道是否可能通过替换程序库来消除瓶颈。比如如果你的程序有I/O瓶颈，你可以考虑用stdio.h替代iostream，如果程序在动态分配和释放内存上使用了大量时间，你可以想想是否有其他的operator new 和 operator delete的实现可用。因为不同的程序库在效率、可扩展性、移植性、类型安全和其他一些领域上蕴含着不同的设计理念，通过变换使用给予性能更多考虑的程序库，你有时可以大幅度地提高软件的效率。
+
+
+六、字符串  hellostrings.cpp
+
+  C方法：字符数组/字符指针
+         1)char str[80];
+   
+         2)char *p;
+           p = (char*)malloc(80);
+           //输入字符串到p中
+           //使用完毕
+           free(p);
+   在C语言时代，C库提供了基于char*数据类型的字符串处理函数，典型代表如strlen，strcpy，strcat等。原始、容易出错，是这类字符串处理方法的典型特征。另外，strcat的效率并不高，字符串查找（strstr）也是用了最原始的方式。
+
+char * strcat(char * dest, const char * src)
+{
+    char *tmp = dest;
+    while (*dest)
+ 	dest++;
+    while ((*dest++ = *src++) != '\0');
+    return tmp;
+} 
+函数中没有检查操作对象的边界。如越界写缓冲区和使用没有'\0'的字符串。
+
+
+  C++方法：C++标准库（STL）提供了string（basic_string）类进行字符串操作。它和C方法比较起来，不必担心内存是否足够、字符串长度等等，而且作为一个类出现，它集成的操作函数足以完成我们大多数情况下(甚至是100%)的需要。可以用 = 进行赋值操作，== 进行比较，+ 做串联。尽可以把它看成是C++的基本数据类型。
+     string str;
+     str = "hello";  
+     str = str + " how are you.";
+
+  在具体应用时(如文件阅读器)， 要考虑到：大小、性能等因素，该如何选择？
+  字符串及文本处理是一个历史悠久，并且相当复杂的一个话题。从简单到字符串的比较（compare）、连接（concat），到复杂的文本编辑、正则表达式、HTML文本内容的解析，都属于相关的范畴。
+    
+STL的string类也有一些争议点，字符串处理的应用环境很复杂，需要因地制宜。
+
+盘点StdExt的字符串类：String/StringBuilder/TextPool/Rope
+1)从支持的串的规模来讲，String/StringBuilder重点解决小字符串的问题（特别是StringBuilder，在大字符串情形下，一定会有性能瓶颈）。而TextPool, Rope重点解决巨型字符串的问题。
+
+2)从实现上来讲，String/StringBuilder是线性内存的。而TextPool, Rope的字符串并不物理连续，它们是逻辑字符串。
+
+3)从支持的操作来讲，String是常字符串；StringBuilder/TextPool主要支持改写(set)、添加(append)操作，但不推荐插入(insert)操作。从伸缩性来讲，TextPool好要好于StringBuilder；而Rope的操作侧重点在于优化字符串级的复杂操作，如取子字符串、插入、删除等，但是单个字符的修改和获取代价略高（相比于String/StringBuilder/TextPool）。
+
+Boost C++ 库
+  Boost库是一个可移植、提供源代码的C++库，作为标准库的后备，是C++标准化进程的发动机之一。 Boost库由C++标准委员会库工作组成员发起，在C++社区中影响甚大，其成员已近2000人。 Boost库为我们带来了最新、最酷、最实用的技术，是不折不扣的“准”标准库。
+   boost相当于STL的延续和扩充，它的设计理念和STL比较接近，都是利用泛型让复用达到最大化。不过对比STL，boost更加实用。STL集中在算法部分，而boost包含了不少工具类，可以完成比较具体的工作。
+   boost主要包含一下几个大类：字符串及文本处理、容器、迭代子(Iterator)、算法、函数对象和高阶编程、泛型编程、模板元编程、预处理元编程、并发编程、数学相关、纠错和测试、数据结构、输入/输出、跨语言支持、内存相关、语法分析、杂项。 有一些库是跨类别包含的，就是既属于这个类别又属于那个类别。
+    在文本处理部分，conversion/lexcial_cast类用于“用C++”的方法实现数字类型和字符串之间的转换。 主要是替代C标准库中的 atoi、 itoa之类的函数。当然其中一个最大的好处就是支持泛型了。 
+    format库提供了对流的“printf-like”功能。printf里使用%d、%s等等的参数做替换的方法在很多情况下还是非常方便的，STL的iostream则缺乏这样的功能。format为stream增加了这个功能，并且功能比原始的printf更强。 
+    regex，这个不多说了，正则表达式库。如果需要做字符串分析的人就会理解正则表达式有多么有用了。 
+    spirit，这个是做LL分析的框架，可以根据EBNF规则对文件进行分析。做编译器的可能会用到。一般人不太用的到。 
+    tokenizer库。经常在CSDN上看到有人问怎么把一个字符串按逗号分割成字符串数组。也许有些人很羡慕VB的split函数。现在，boost的tokenizer也有相同的功能了，这个tokenizer还支持正则表达式 
+
+
+    array: 提供了常量大小的数组的一个包装，喜欢用数组但是苦恼数组定位、确定数组大小等功能的人这下开心了。 
+
+
+    dynamic_bitset，动态分配大小的bitset，我们知道STL里有个bitset，为位运算提供了不少方便。可惜它的大小需要在编译期指定。现在好了，运行期动态分配大小的bitset来了。 
+
+
+    graph。提供了图的容器和相关算法。我还没有在程序中用到过图，需要用的人可以看看。 
+
+
+    multi_array提供了对多维数组的封装，应该还是比较有用的。 
+
+
+    并发编程里只有一个库，thread，提供了一个可移植的线程库，不过在Windows平台上我感觉用处不大。因为它是基于Posix线程的，在Windows里对Posix的支持不是很好。 
+
+
+    接下来的 数学和数值 类里，包含了很多数值处理方面的类库，数学类我也不太熟，不过这里有几个类还是很有用的，比如rational分数类，random随机数类，等等。 
+
+
+    static_assert，提供了编译器的assert功能。 
+
+
+    test库，一个单元测试框架，非常不错。 
+
+
+    concept_check提供了泛型编程时，对泛型量的一点检查，不是很完善，不过比没有好。 
+
+
+    数据类型类any，一个安全的可以包含不同对象的类。把它作为容器的元素类型，那么这个容器就可以包含不同类型的元素。比用void *要安全。 
+
+
+    compressed_pair，跟STL里的pair差不多。不过对空元素做了优化。 
+
+
+    tuple，呵呵，也许是某些人梦寐以求的东西。可以让函数返回多个值。 
+
+
+    跨语言支持：python，呵呵，好东东啊，可以将C++的类和函数映射给python使用。
+
+    pool:内存池，呵呵，不用害怕频繁分配释放内存导致内存碎片，也不用自己辛辛苦苦自己实现了。 
+
+
+    smart_ptr:智能指针，这下不用担心内存泄漏的问题了吧。不过，C++里的智能指针都还不是十全十美的，用的时候小心点了，不要做太技巧性的操作了。 
+
+
+    date_time，这个是平台、类库无关的实现，如果程序需要跨平台，可以考虑用这个。 
+
+
+     timer，提供了一个计时器，虽然不是Windows里那种基于消息的计时器，不过据说可以用来测量语句执行时间。 
+
+
+     uitlity里提供了一个noncopyable类，可以实现“无法复制”的类。很多情况下，我们需要避免一个类被复制，比如代表文件句柄的类，文件句柄如果被两个实例共享，操作上会有很多问题，而且语义上也说不过去。一般的避免实例复制的方法是把拷贝构造和operator=私有化，现在只要继承一下这个类就可以了，清晰了很多。 
+
+
+     value_initialized：数值初始化，可以保证声明的对象都被明确的初始化，不过这个真的实用吗？似乎写这个比直接写初始化还累。呵呵，仁者见仁了。 
+
+
+     这里面除了regex、python和test需要编译出库才能用，其他的大部分都可以直接源代码应用，比较方便。其实这些库使用都不难。最主要的原因是有些库的使用需要有相关的背景知识，比如元编程、STL、泛型编程等等。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

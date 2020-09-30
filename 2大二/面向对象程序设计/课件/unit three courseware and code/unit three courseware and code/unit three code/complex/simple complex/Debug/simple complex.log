@@ -1,0 +1,32 @@
+﻿生成启动时间为 2019/3/21 9:16:13。
+     1>项目“D:\浙大\2018~2019春夏\OOP\Code\unit three code\complex\simple complex\simple complex.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\simple complex.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\simple complex.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       GenerateTargetFrameworkMonikerAttribute:
+       正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /analyze- /errorReport:prompt complex.cpp test.cpp /clr:nostdlib 
+         complex.cpp
+         test.cpp
+     1>test.cpp(15): warning C4101: “n”: 未引用的局部变量
+     1>test.cpp(14): warning C4101: “m”: 未引用的局部变量
+         正在生成代码...
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /analyze- /errorReport:prompt "C:\Users\Administrator\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019春夏\OOP\Code\unit three code\Debug\simple complex.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\simple complex.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019春夏\OOP\Code\unit three code\Debug\simple complex.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\complex.obj
+         Debug\test.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         simple complex.vcxproj -> D:\浙大\2018~2019春夏\OOP\Code\unit three code\Debug\simple complex.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2018~2019春夏\OOP\Code\unit three code\Debug\simple complex.exe;#1" /manifest "Debug\simple complex.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“Debug\simple complex.unsuccessfulbuild”。
+         正在对“Debug\simple complex.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\浙大\2018~2019春夏\OOP\Code\unit three code\complex\simple complex\simple complex.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:06.42

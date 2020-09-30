@@ -1,0 +1,4 @@
+exercise4评分标准：共5分，精确到0.5。
+1. 程序结构合理，布局清晰，正确地设计Node/IntNode/StrngNode/DoubleNode之间的继承关系：2分 
+2. 对类的成员合理地使用访问权限：1分
+3. 正确地使用virtual function　／　virtual destructor　／　pure virtual function：2分

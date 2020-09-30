@@ -1,0 +1,21 @@
+﻿生成启动时间为 2019/3/21 10:10:02。
+     1>项目“D:\浙大\2018~2019春夏\OOP\Code\unit two code\pointer\pointer.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\pointers.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“Debug\pointers.unsuccessfulbuild”执行 Touch 任务。
+       GenerateTargetFrameworkMonikerAttribute:
+       正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /analyze- /errorReport:prompt ConstPointers.cpp "difference between pointers in C and in C++.cpp" "指针和数组.cpp" /clr:nostdlib 
+         ConstPointers.cpp
+         difference between pointers in C and in C++.cpp
+     1>difference between pointers in C and in C++.cpp(39): error C2440: “static_cast”: 无法从“bird *”转换为“rock *”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+         指针和数组.cpp
+         正在生成代码...
+     1>已完成生成项目“D:\浙大\2018~2019春夏\OOP\Code\unit two code\pointer\pointer.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.43

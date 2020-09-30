@@ -1,0 +1,323 @@
+﻿生成启动时间为 2015-5-21 16:41:52。
+     1>项目“E:\教学\2014~2015春夏\OOP\Code\unit three code\MiniCAD\MiniCAD.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\MiniCAD.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“Debug\MiniCAD.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Circle.cpp Line.cpp LineStrip.cpp Polygon.cpp Rectangle.cpp Shape.cpp
+         Shape.cpp
+     1>e:\教学\2014~2015春夏\oop\code\unit three code\minicad\shape.cpp(5): fatal error C1083: 无法打开包括文件:“MyCad.h”: No such file or directory
+         Rectangle.cpp
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(28): error C2504: “tagSIZE”: 未定义基类
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(35): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(35): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(39): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(39): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(41): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(41): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(43): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(43): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C2805: 二进制“operator ==”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C2143: 语法错误 : 缺少“;”(在“!=”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C2805: 二进制“operator !=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(48): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(48): error C2805: 二进制“operator +=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(49): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(49): error C2805: 二进制“operator -=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(50): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(55): error C2535: “CSize CSize::operator -(void) throw() const”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(58): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(58): error C2556: “CPoint CSize::operator +(void) throw() const”: 重载函数与“CSize CSize::operator +(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53) : 参见“CSize::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(58): error C2371: “CSize::operator +”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53) : 参见“CSize::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(59): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(59): error C2556: “CPoint CSize::operator -(void) throw() const”: 重载函数与“CSize CSize::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(59): error C2371: “CSize::operator -”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(62): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(62): error C2556: “CRect CSize::operator +(void) throw() const”: 重载函数与“CSize CSize::operator +(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53) : 参见“CSize::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(63): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(63): error C2556: “CRect CSize::operator -(void) throw() const”: 重载函数与“CSize CSize::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(71): error C2504: “tagPOINT”: 未定义基类
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(78): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(78): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(82): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(82): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(84): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(84): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(86): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(86): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(93): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(95): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(95): error C2535: “void CPoint::Offset(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(92) : 参见“CPoint::Offset”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(96): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(96): error C2535: “void CPoint::Offset(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(92) : 参见“CPoint::Offset”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(98): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C2805: 二进制“operator ==”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C2143: 语法错误 : 缺少“;”(在“!=”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C2805: 二进制“operator !=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(103): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(103): error C2805: 二进制“operator +=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(104): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(104): error C2805: 二进制“operator -=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(105): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(106): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(111): error C2535: “CPoint CPoint::operator -(void) throw() const”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(112): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(112): error C2535: “CPoint CPoint::operator +(void) throw() const”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109) : 参见“CPoint::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(115): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(115): error C2556: “CSize CPoint::operator -(void) throw() const”: 重载函数与“CPoint CPoint::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(115): error C2371: “CPoint::operator -”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(118): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(118): error C2556: “CRect CPoint::operator +(void) throw() const”: 重载函数与“CPoint CPoint::operator +(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109) : 参见“CPoint::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(118): error C2371: “CPoint::operator +”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109) : 参见“CPoint::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(119): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(119): error C2556: “CRect CPoint::operator -(void) throw() const”: 重载函数与“CPoint CPoint::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(127): error C2504: “tagRECT”: 未定义基类
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(133): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(133): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(139): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(139): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(141): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(141): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(143): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(143): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(147): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(147): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2146: 语法错误: 缺少“;”(在标识符“SwapLeftRight”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2182: “WINAPI”: 非法使用“void”类型
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2061: 语法错误: 标识符“_Inout_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2556: “int CRect::SwapLeftRight(void) throw()”: 重载函数与“void CRect::SwapLeftRight(void) throw()”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(170) : 参见“CRect::SwapLeftRight”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2371: “CRect::SwapLeftRight”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(170) : 参见“CRect::SwapLeftRight”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): warning C4183: “SwapLeftRight”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(174): error C2833: “operator LPRECT”不是可识别的运算符或类型
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(174): error C2059: 语法错误:“newline”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(174): error C2238: 意外的标记位于“;”之前
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(175): error C2833: “operator LPCRECT”不是可识别的运算符或类型
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(175): error C2059: 语法错误:“newline”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(175): error C2238: 意外的标记位于“;”之前
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): error C2146: 语法错误: 缺少“;”(在标识符“IsRectEmpty”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): warning C4183: “IsRectEmpty”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): error C2146: 语法错误: 缺少“;”(在标识符“IsRectNull”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): warning C4183: “IsRectNull”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C2146: 语法错误: 缺少“;”(在标识符“PtInRect”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): warning C4183: “PtInRect”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(188): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(193): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(193): fatal error C1003: 错误计数超过 100；正在停止编译
+         Polygon.cpp
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(28): error C2504: “tagSIZE”: 未定义基类
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(35): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(35): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(39): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(39): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(41): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(41): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(43): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(43): error C2535: “CSize::CSize(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(33) : 参见“CSize::CSize”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(46): error C2805: 二进制“operator ==”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C2143: 语法错误 : 缺少“;”(在“!=”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(47): error C2805: 二进制“operator !=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(48): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(48): error C2805: 二进制“operator +=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(49): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(49): error C2805: 二进制“operator -=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(50): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(55): error C2535: “CSize CSize::operator -(void) throw() const”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(58): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(58): error C2556: “CPoint CSize::operator +(void) throw() const”: 重载函数与“CSize CSize::operator +(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53) : 参见“CSize::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(58): error C2371: “CSize::operator +”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53) : 参见“CSize::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(59): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(59): error C2556: “CPoint CSize::operator -(void) throw() const”: 重载函数与“CSize CSize::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(59): error C2371: “CSize::operator -”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(62): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(62): error C2556: “CRect CSize::operator +(void) throw() const”: 重载函数与“CSize CSize::operator +(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(53) : 参见“CSize::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(63): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(63): error C2556: “CRect CSize::operator -(void) throw() const”: 重载函数与“CSize CSize::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(54) : 参见“CSize::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(71): error C2504: “tagPOINT”: 未定义基类
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(78): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(78): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(82): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(82): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(84): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(84): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(86): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(86): error C2535: “CPoint::CPoint(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(76) : 参见“CPoint::CPoint”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(93): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(95): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(95): error C2535: “void CPoint::Offset(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(92) : 参见“CPoint::Offset”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(96): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(96): error C2535: “void CPoint::Offset(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(92) : 参见“CPoint::Offset”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(98): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(101): error C2805: 二进制“operator ==”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C2143: 语法错误 : 缺少“;”(在“!=”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(102): error C2805: 二进制“operator !=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(103): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(103): error C2805: 二进制“operator +=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(104): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(104): error C2805: 二进制“operator -=”的参数太少
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(105): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(106): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(111): error C2535: “CPoint CPoint::operator -(void) throw() const”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(112): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(112): error C2535: “CPoint CPoint::operator +(void) throw() const”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109) : 参见“CPoint::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(115): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(115): error C2556: “CSize CPoint::operator -(void) throw() const”: 重载函数与“CPoint CPoint::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(115): error C2371: “CPoint::operator -”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(118): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(118): error C2556: “CRect CPoint::operator +(void) throw() const”: 重载函数与“CPoint CPoint::operator +(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109) : 参见“CPoint::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(118): error C2371: “CPoint::operator +”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(109) : 参见“CPoint::operator +”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(119): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(119): error C2556: “CRect CPoint::operator -(void) throw() const”: 重载函数与“CPoint CPoint::operator -(void) throw() const”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(110) : 参见“CPoint::operator -”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(127): error C2504: “tagRECT”: 未定义基类
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(133): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(133): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(139): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(139): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(141): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(141): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(143): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(143): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(147): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(147): error C2535: “CRect::CRect(void) throw()”: 已经定义或声明成员函数
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(131) : 参见“CRect::CRect”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2146: 语法错误: 缺少“;”(在标识符“SwapLeftRight”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2182: “WINAPI”: 非法使用“void”类型
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2061: 语法错误: 标识符“_Inout_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2556: “int CRect::SwapLeftRight(void) throw()”: 重载函数与“void CRect::SwapLeftRight(void) throw()”只是在返回类型上不同
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(170) : 参见“CRect::SwapLeftRight”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): error C2371: “CRect::SwapLeftRight”: 重定义；不同的基类型
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(170) : 参见“CRect::SwapLeftRight”的声明
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(171): warning C4183: “SwapLeftRight”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(174): error C2833: “operator LPRECT”不是可识别的运算符或类型
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(174): error C2059: 语法错误:“newline”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(174): error C2238: 意外的标记位于“;”之前
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(175): error C2833: “operator LPCRECT”不是可识别的运算符或类型
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(175): error C2059: 语法错误:“newline”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(175): error C2238: 意外的标记位于“;”之前
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): error C2146: 语法错误: 缺少“;”(在标识符“IsRectEmpty”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(178): warning C4183: “IsRectEmpty”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): error C2146: 语法错误: 缺少“;”(在标识符“IsRectNull”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(180): warning C4183: “IsRectNull”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C2146: 语法错误: 缺少“;”(在标识符“PtInRect”的前面)
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(182): warning C4183: “PtInRect”: 缺少返回类型；假定为返回“int”的成员函数
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(188): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(193): error C2061: 语法错误: 标识符“_In_”
+     1>c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atltypes.h(193): fatal error C1003: 错误计数超过 100；正在停止编译
+         LineStrip.cpp
+         Compiler terminating.  Please wait.
+     1>已完成生成项目“E:\教学\2014~2015春夏\OOP\Code\unit three code\MiniCAD\MiniCAD.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:02.84

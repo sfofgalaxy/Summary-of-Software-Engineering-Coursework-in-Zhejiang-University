@@ -1,0 +1,19 @@
+﻿生成启动时间为 2018/12/19 10:24:41。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit four code\function template\function template.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\function template.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\浙大\2018~2019秋冬\OOP\Code\unit four code\Debug\function template.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\function template.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\浙大\2018~2019秋冬\OOP\Code\unit four code\Debug\function template.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\浙大\2018~2019秋冬\OOP\Code\unit four code\Debug\function template.lib" /MACHINE:X86 Debug\test.obj
+         function template.vcxproj -> D:\浙大\2018~2019秋冬\OOP\Code\unit four code\Debug\function template.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\浙大\2018~2019秋冬\OOP\Code\unit four code\Debug\function template.exe;#1" /manifest "Debug\function template.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“Debug\function template.unsuccessfulbuild”。
+         正在对“Debug\function template.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit four code\function template\function template.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.42

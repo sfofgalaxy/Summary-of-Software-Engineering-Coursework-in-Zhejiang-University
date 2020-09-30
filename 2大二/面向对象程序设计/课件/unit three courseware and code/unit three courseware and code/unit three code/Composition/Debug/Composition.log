@@ -1,0 +1,13 @@
+﻿生成启动时间为 2018/11/20 10:38:00。
+     1>项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Composition\Composition.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "object member.cpp"
+         object member.cpp
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\composition\object member.cpp(17): error C2460: “B::b”: 使用正在定义的“B”
+                 d:\浙大\2018~2019秋冬\oop\code\unit three code\composition\object member.cpp(13) : 参见“B”的声明
+     1>d:\浙大\2018~2019秋冬\oop\code\unit three code\composition\object member.cpp(36): warning C4305: “参数”: 从“double”到“float”截断
+     1>已完成生成项目“D:\浙大\2018~2019秋冬\OOP\Code\unit three code\Composition\Composition.vcxproj”(ClCompile 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.41

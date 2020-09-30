@@ -1,0 +1,12 @@
+﻿  源.cpp
+d:\!大二下\高级数据结构\shortest path with heaps\shortest path with heaps\shortest path with heaps\源.cpp(39): warning C4244: “参数”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+d:\!大二下\高级数据结构\shortest path with heaps\shortest path with heaps\shortest path with heaps\源.cpp(123): warning C4244: “参数”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+  Shortest path with heaps.vcxproj -> D:\!大二下\高级数据结构\Shortest path with heaps\Shortest path with heaps\Debug\Shortest path with heaps.exe

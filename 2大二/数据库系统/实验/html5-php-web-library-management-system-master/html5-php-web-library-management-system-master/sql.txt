@@ -1,0 +1,245 @@
+# create a database named "lib_sys"
+CREATE DATABASE lib_sys;
+
+USE lib_sys;
+
+CREATE TABLE Administrators
+(
+    Aid INT(8) PRIMARY KEY NOT NULL,
+    Aname VARCHAR(255) NOT NULL,
+    Apassword VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Library
+(
+  ISBN VARCHAR(255) PRIMARY KEY NOT NULL,
+  Bname VARCHAR(255) NOT NULL,
+  Cover VARCHAR(255) NOT NULL,
+  Press VARCHAR(255) NOT NULL,
+  Author VARCHAR(255) NOT NULL,
+  Category VARCHAR(255),
+  Amount INT(3) NOT NULL,
+  InAmount INT(3) NOT NULL,
+  TotalBrw INT(5) DEFAULT 0 NOT NULL,
+  Frequency DOUBLE NOT NULL DEFAULT 0.0
+);
+
+CREATE TABLE Book
+(
+    Bcode INT(6) NOT NULL,
+    ISBN VARCHAR(255) NOT NULL,
+    Status BINARY(1) DEFAULT 1 NOT NULL, # 0为借出，1为在馆
+    position VARCHAR(255) NOT NULL,
+    CONSTRAINT Book_Bcode_ISBN_pk PRIMARY KEY (Bcode, ISBN),
+    CONSTRAINT Book_Library_ISBN_fk FOREIGN KEY (ISBN) REFERENCES Library (ISBN) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Reader
+(
+    Rid INT(8) PRIMARY KEY NOT NULL,
+    Rname VARCHAR(255) NOT NULL,
+    Gender BINARY(1) NOT NULL , #0为男生 1为女生
+    IDPhoto VARCHAR(255),
+    Rpassword VARCHAR(255) NOT NULL,
+    Arrearage INT(2) DEFAULT 0,
+    CardStatus INT DEFAULT 1 #0:没有读者证，1：正常，2：挂失
+);
+
+CREATE TABLE Recommend
+(
+    Rid INT(8) NOT NULL,
+    ISBN VARCHAR(255) PRIMARY KEY,
+    Bname VARCHAR(255) NOT NULL,
+    Press VARCHAR(255) DEFAULT NULL ,
+    Author VARCHAR(255) DEFAULT NULL,
+    Status INT(1) DEFAULT 0, #0 为未处理，1为已经购入, 2为不购入
+    Response VARCHAR(255) DEFAULT NULL
+);
+
+CREATE TABLE Borrowing
+(
+    Rid INT(8) NOT NULL,
+    Bcode INT(6) NOT NULL,
+    BorrowDate DATE NOT NULL,
+    Deadline DATE NOT NULL,
+    Renewline DATE NOT NULL,
+    Penalty DOUBLE DEFAULT 0 NOT NULL,
+    CONSTRAINT Borrowing_Rid_Bcode_pk PRIMARY KEY (Rid, Bcode),
+    CONSTRAINT Borrowing_Book_Bcode_fk FOREIGN KEY (Bcode) REFERENCES Book (Bcode) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Borrowing_Reader_Rid_fk FOREIGN KEY (Rid) REFERENCES Reader (Rid) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Returned
+(
+    Rid INT(8) NOT NULL,
+    Bcode INT(6) NOT NULL,
+    BorrowDate DATE NOT NULL,
+    Deadline DATE NOT NULL,
+    ReturnDate DATE DEFAULT NULL ,
+    EndPenalty INT DEFAULT 0 NOT NULL,
+    Paid BINARY(1) DEFAULT 0  NOT NULL,# 0为未缴纳， 1 为已缴纳
+    CONSTRAINT Returned_Rid_Bcode_pk PRIMARY KEY (Rid, Bcode,BorrowDate)
+);
+
+# create some index to raise efficiency
+CREATE INDEX Library_Bname_ISBN_Press_index ON Library (Bname, ISBN, Press);
+CREATE INDEX Book_Bcode_ISBN_index ON Book(Bcode, ISBN);
+CREATE INDEX Reader_Rid_Rname_index ON Reader(Rid, Rname);
+CREATE INDEX Borrowing_Rid_Bcode_index ON Borrowing (Rid,Bcode);
+CREATE INDEX Returned_Rid_Bcode_Returned ON Returned (Rid, Bcode);
+CREATE INDEX Returned_Rid_Bcode_BorrowDate_index ON Returned (Rid, Bcode, BorrowDate);
+
+# fill in some default values for every table.
+INSERT INTO Administrators VALUES (1000001, 'admin1', '123456');
+
+INSERT INTO Library VALUES ('9787530209554', '平凡的世界', 'https://img1.doubanio.com/lpic/s1120877.jpg', '人民文学出版社', '路遥', '文学', 2, 1, 5, 2);
+INSERT INTO Library VALUES ('9787506356435', '你在高原', 'https://img1.doubanio.com/lpic/s4719127.jpg', '作家出版社', '张炜', '文学', 2, 1, 1 ,1);
+
+INSERT INTO Book VALUES (100001, '9787530209554', 1, 'A111.E1');
+INSERT INTO Book VALUES (100002, '9787506356435', 1, 'A111.E2');
+INSERT INTO Book VALUES (100003, '9787530209554', 0, 'A111.E3');
+INSERT INTO Book VALUES (100004, '9787506356435', 0, 'A111.E4');
+INSERT INTO Reader VALUES (11510082, 'xixi', 0, 'http://www.qqzhi.com/uploadpic/2015-02-02/211841154.jpg', 'zhouxihaha', 8, 1);
+INSERT INTO Reader VALUES (11814221, 'haha', 1, 'http://imgsrc.baidu.com/forum/w%3D580/sign=a3abd87a8418367aad897fd51e728b68/513d269759ee3d6d4601929841166d224e4ade99.jpg', 'wuminghaha', 30, 0);
+INSERT INTO Borrowing VALUES (11510082, 100003, curdate(), date_add(curdate(), INTERVAL 1 MONTH), date_add(curdate(), INTERVAL 1 MONTH), 0.0);
+INSERT INTO Borrowing VALUES (11814221, 100004, '2018-11-24', '2018-12-24', '2019-1-24', 30);
+INSERT INTO Returned VALUES (11510082, 100002, '2017-09-04', '2017-10-04',curdate(), 0, 0);
+INSERT INTO Returned VALUES (11510082, 100002, '2017-07-04', '2017-08-03', '2017-09-30', 8, 0);
+INSERT INTO Recommend VALUES (11510082,'9787201088327', '世界上的童话都是写给大人看的', '天津人民出版社', '陈谌',0, '');
+INSERT INTO Recommend VALUES (11510082, ' 9787561756638', '社会性动物', '华东师范大学出版社', 'Elliot Aronson', 0, '' );
+
+
+INSERT INTO Library VALUES ('9730437504235', 'bookname1', 'https://url/2/cover.jpg', 'Press1', 'Author1', '数学', 5, 5, 37, 2);
+INSERT INTO Library VALUES ('9965810096253', 'bookname2', 'https://url/3/cover.jpg', 'Press2', 'Author2', '文学', 2, 2, 25, 0);
+INSERT INTO Library VALUES ('9399851262987', 'bookname3', 'https://url/4/cover.jpg', 'Press3', 'Author3', '数学', 1, 1, 74, 5);
+INSERT INTO Library VALUES ('9563392824682', 'bookname4', 'https://url/5/cover.jpg', 'Press4', 'Author4', '心理学', 3, 3, 90, 0);
+INSERT INTO Library VALUES ('9542336795620', 'bookname5', 'https://url/6/cover.jpg', 'Press5', 'Author5', '文学', 5, 4, 75, 1);
+INSERT INTO Library VALUES ('9125296294055', 'bookname6', 'https://url/7/cover.jpg', 'Press6', 'Author6', '社会科学', 3, 2, 83, 3);
+INSERT INTO Library VALUES ('9852356548265', 'bookname7', 'https://url/8/cover.jpg', 'Press7', 'Author7', '心理学', 3, 3, 86, 2);
+INSERT INTO Library VALUES ('9626625993750', 'bookname8', 'https://url/9/cover.jpg', 'Press8', 'Author8', '心理学', 1, 0, 29, 1);
+INSERT INTO Library VALUES ('9894594124720', 'bookname9', 'https://url/10/cover.jpg', 'Press9', 'Author9', '社会科学', 2, 2, 55, 5);
+INSERT INTO Library VALUES ('9531194829777', 'bookname10', 'https://url/11/cover.jpg', 'Press10', 'Author10', '文学', 1, 1, 42, 4);
+INSERT INTO Library VALUES ('9800617641088', 'bookname11', 'https://url/12/cover.jpg', 'Press11', 'Author11', '社会科学', 5, 2, 41, 3);
+INSERT INTO Library VALUES ('9858546891374', 'bookname12', 'https://url/13/cover.jpg', 'Press12', 'Author12', '社会科学', 5, 4, 9, 2);
+
+
+INSERT INTO Reader VALUES (11549269, 'reader1', 1, 'https://www.photos/11549269/icom.jpg', 'qFe2yHChIJ37iLW', 0, 1);
+INSERT INTO Reader VALUES (11271165, 'reader2', 0, 'https://www.photos/11271165/icom.jpg', 's6QpbCnmDHoeagAr', 2, 1);
+INSERT INTO Reader VALUES (11275084, 'reader3', 1, 'https://www.photos/11275084/icom.jpg', 'lOMgTWb', 0, 1);
+INSERT INTO Reader VALUES (11790670, 'reader4', 1, 'https://www.photos/11790670/icom.jpg', 'AzG9QL0ei81t', 0, 1);
+INSERT INTO Reader VALUES (11655659, 'reader5', 1, 'https://www.photos/11655659/icom.jpg', 'j5H3fWALhBcTVmo', 0, 1);
+INSERT INTO Reader VALUES (11082449, 'reader6', 1, 'https://www.photos/11082449/icom.jpg', 'FQ10iEZSs', 0, 2);
+INSERT INTO Reader VALUES (11068034, 'reader7', 0, 'https://www.photos/11068034/icom.jpg', 'pjkUJtD9fd8Zax', 13, 1);
+INSERT INTO Reader VALUES (11854998, 'reader8', 1, 'https://www.photos/11854998/icom.jpg', '8gFbSLy7jokIhEP', 0, 2);
+INSERT INTO Reader VALUES (11546088, 'reader9', 1, 'https://www.photos/11546088/icom.jpg', 'q5PQbsnvir0R1jDG', 0, 1);
+INSERT INTO Reader VALUES (11610008, 'reader10', 0, 'https://www.photos/11610008/icom.jpg', 'dQbWqk4R', 0, 1);
+INSERT INTO Reader VALUES (11716078, 'reader11', 1, 'https://www.photos/11716078/icom.jpg', '5JEPofalpiLeC7m', 0, 1);
+INSERT INTO Reader VALUES (11451534, 'reader12', 0, 'https://www.photos/11451534/icom.jpg', 'ZnfH1MLjQEq', 0, 1);
+INSERT INTO Reader VALUES (11676747, 'reader13', 1, 'https://www.photos/11676747/icom.jpg', 'lxEm4CRQ', 1, 1);
+INSERT INTO Reader VALUES (11979671, 'reader14', 0, 'https://www.photos/11979671/icom.jpg', 'yYc3AeT', 0, 1);
+INSERT INTO Reader VALUES (11137790, 'reader15', 1, 'https://www.photos/11137790/icom.jpg', '5QhDPJWzbqgo', 0, 1);
+INSERT INTO Reader VALUES (11494761, 'reader16', 1, 'https://www.photos/11494761/icom.jpg', '2qz56FOnI', 0, 1);
+INSERT INTO Reader VALUES (11633783, 'reader17', 0, 'https://www.photos/11633783/icom.jpg', 'Ay7USq', 0, 1);
+INSERT INTO Reader VALUES (11377307, 'reader18', 1, 'https://www.photos/11377307/icom.jpg', 'LRkS6x02Bl', 0, 1);
+INSERT INTO Reader VALUES (11762330, 'reader19', 1, 'https://www.photos/11762330/icom.jpg', 'kURH5tK', 0, 0);
+INSERT INTO Reader VALUES (11004551, 'reader20', 0, 'https://www.photos/11004551/icom.jpg', '01rTJlwtVdh2Gmn', 0, 1);
+
+
+INSERT INTO Book VALUES (100005, '9730437504235', 0, 'A111.E5');
+INSERT INTO Book VALUES (100006, '9730437504235', 1, 'A111.E6');
+INSERT INTO Book VALUES (100007, '9730437504235', 0, 'A111.E7');
+INSERT INTO Book VALUES (100008, '9730437504235', 0, 'A111.E8');
+INSERT INTO Book VALUES (100009, '9730437504235', 0, 'A111.E9');
+INSERT INTO Book VALUES (100010, '9965810096253', 0, 'A111.E10');
+INSERT INTO Book VALUES (100011, '9965810096253', 1, 'A111.E11');
+INSERT INTO Book VALUES (100012, '9399851262987', 1, 'A111.E12');
+INSERT INTO Book VALUES (100013, '9563392824682', 0, 'A111.E13');
+INSERT INTO Book VALUES (100014, '9563392824682', 0, 'A111.E14');
+INSERT INTO Book VALUES (100015, '9563392824682', 1, 'A111.E15');
+INSERT INTO Book VALUES (100016, '9542336795620', 1, 'A111.E16');
+INSERT INTO Book VALUES (100017, '9542336795620', 0, 'A111.E17');
+INSERT INTO Book VALUES (100018, '9542336795620', 0, 'A111.E18');
+INSERT INTO Book VALUES (100019, '9542336795620', 0, 'A111.E19');
+INSERT INTO Book VALUES (100020, '9542336795620', 0, 'A111.E20');
+INSERT INTO Book VALUES (100021, '9125296294055', 0, 'A111.E21');
+INSERT INTO Book VALUES (100022, '9125296294055', 0, 'A111.E22');
+INSERT INTO Book VALUES (100023, '9125296294055', 0, 'A111.E23');
+INSERT INTO Book VALUES (100024, '9852356548265', 0, 'A111.E24');
+INSERT INTO Book VALUES (100025, '9852356548265', 0, 'A111.E25');
+INSERT INTO Book VALUES (100026, '9852356548265', 1, 'A111.E26');
+INSERT INTO Book VALUES (100027, '9626625993750', 1, 'A111.E27');
+INSERT INTO Book VALUES (100028, '9894594124720', 0, 'A111.E28');
+INSERT INTO Book VALUES (100029, '9894594124720', 1, 'A111.E29');
+INSERT INTO Book VALUES (100030, '9531194829777', 1, 'A111.E30');
+INSERT INTO Book VALUES (100031, '9800617641088', 0, 'A111.E31');
+INSERT INTO Book VALUES (100032, '9800617641088', 1, 'A111.E32');
+INSERT INTO Book VALUES (100033, '9800617641088', 1, 'A111.E33');
+INSERT INTO Book VALUES (100034, '9800617641088', 0, 'A111.E34');
+INSERT INTO Book VALUES (100035, '9800617641088', 1, 'A111.E35');
+INSERT INTO Book VALUES (100036, '9858546891374', 1, 'A111.E36');
+INSERT INTO Book VALUES (100037, '9858546891374', 1, 'A111.E37');
+INSERT INTO Book VALUES (100038, '9858546891374', 0, 'A111.E38');
+INSERT INTO Book VALUES (100039, '9858546891374', 1, 'A111.E39');
+INSERT INTO Book VALUES (100040, '9858546891374', 0, 'A111.E40');
+
+
+INSERT INTO Borrowing VALUES (11082449, 100005, '2017-12-08', '2018-01-07', '2018-01-22', 0);
+INSERT INTO Borrowing VALUES (11716078, 100007, '2017-12-14', '2018-01-13', '2018-01-28', 0);
+INSERT INTO Borrowing VALUES (11854998, 100008, '2017-12-09', '2018-01-08', '2018-01-23', 0);
+INSERT INTO Borrowing VALUES (11494761, 100009, '2017-12-06', '2018-01-05', '2018-01-20', 0);
+INSERT INTO Borrowing VALUES (11068034, 100010, '2017-12-20', '2018-01-19', '2018-02-03', 0);
+INSERT INTO Borrowing VALUES (11610008, 100013, '2017-12-14', '2018-01-13', '2018-01-28', 0);
+INSERT INTO Borrowing VALUES (11790670, 100014, '2017-11-02', '2017-12-02', '2017-12-17', 8);
+INSERT INTO Borrowing VALUES (11137790, 100017, '2017-12-20', '2018-01-19', '2018-02-03', 0);
+INSERT INTO Borrowing VALUES (11082449, 100018, '2017-12-16', '2018-01-15', '2018-01-30', 0);
+INSERT INTO Borrowing VALUES (11655659, 100019, '2017-12-12', '2018-01-11', '2018-01-26', 0);
+INSERT INTO Borrowing VALUES (11494761, 100020, '2017-12-21', '2018-01-20', '2018-02-04', 0);
+INSERT INTO Borrowing VALUES (11451534, 100021, '2017-12-12', '2018-01-11', '2018-01-26', 0);
+INSERT INTO Borrowing VALUES (11655659, 100022, '2017-12-03', '2018-01-02', '2018-01-17', 0);
+INSERT INTO Borrowing VALUES (11854998, 100023, '2017-12-09', '2018-01-08', '2018-01-23', 0);
+INSERT INTO Borrowing VALUES (11979671, 100024, '2017-12-08', '2018-01-07', '2018-01-22', 0);
+INSERT INTO Borrowing VALUES (11082449, 100025, '2017-12-14', '2018-01-13', '2018-01-28', 0);
+INSERT INTO Borrowing VALUES (11676747, 100028, '2017-12-21', '2018-01-20', '2018-02-04', 0);
+INSERT INTO Borrowing VALUES (11275084, 100031, '2017-12-22', '2018-01-21', '2018-02-05', 0);
+INSERT INTO Borrowing VALUES (11610008, 100034, '2017-12-05', '2018-01-04', '2018-01-19', 0);
+INSERT INTO Borrowing VALUES (11068034, 100038, '2017-12-22', '2018-01-21', '2018-02-05', 0);
+INSERT INTO Borrowing VALUES (11610008, 100040, '2017-12-16', '2018-01-15', '2018-01-30', 0);
+
+
+INSERT INTO Returned VALUES (11790670, 100024, '2017-12-04', '2018-01-03', '2017-12-06', 0, 0);
+INSERT INTO Returned VALUES (11549269, 100016, '2017-12-11', '2018-01-10', '2017-12-22', 0, 0);
+INSERT INTO Returned VALUES (11275084, 100018, '2017-11-18', '2017-12-18', '2017-11-27', 0, 0);
+INSERT INTO Returned VALUES (11494761, 100013, '2017-10-28', '2017-11-27', '2017-10-30', 0, 0);
+INSERT INTO Returned VALUES (11271165, 100033, '2017-12-09', '2018-01-08', '2017-12-17', 0, 0);
+INSERT INTO Returned VALUES (11451534, 100022, '2017-09-28', '2017-10-28', '2017-10-26', 0, 0);
+INSERT INTO Returned VALUES (11004551, 100030, '2017-12-09', '2018-01-08', '2017-12-18', 0, 0);
+INSERT INTO Returned VALUES (11854998, 100012, '2017-12-05', '2018-01-04', '2017-12-15', 0, 0);
+INSERT INTO Returned VALUES (11790670, 100033, '2017-09-21', '2017-10-21', '2017-10-10', 0, 0);
+INSERT INTO Returned VALUES (11979671, 100036, '2017-12-20', '2018-01-19', '2017-12-21', 0, 0);
+INSERT INTO Returned VALUES (11676747, 100034, '2017-12-04', '2018-01-03', '2017-12-17', 0, 0);
+INSERT INTO Returned VALUES (11137790, 100011, '2017-12-15', '2018-01-14', '2017-12-20', 0, 0);
+INSERT INTO Returned VALUES (11716078, 100020, '2017-12-07', '2018-01-06', '2017-12-15', 0, 0);
+INSERT INTO Returned VALUES (11655659, 100016, '2017-12-17', '2018-01-16', '2017-12-23', 0, 0);
+INSERT INTO Returned VALUES (11979671, 100032, '2017-12-14', '2018-01-13', '2017-12-23', 0, 0);
+INSERT INTO Returned VALUES (11137790, 100037, '2017-12-03', '2018-01-02', '2017-12-19', 0, 0);
+INSERT INTO Returned VALUES (11979671, 100015, '2017-12-12', '2018-01-11', '2017-12-18', 0, 0);
+INSERT INTO Returned VALUES (11790670, 100018, '2017-12-14', '2018-01-13', '2017-12-23', 0, 0);
+INSERT INTO Returned VALUES (11137790, 100021, '2017-12-03', '2018-01-02', '2017-12-22', 0, 0);
+INSERT INTO Returned VALUES (11610008, 100015, '2017-12-15', '2018-01-14', '2017-12-21', 0, 0);
+INSERT INTO Returned VALUES (11546088, 100011, '2017-10-08', '2017-11-07', '2017-10-30', 0, 0);
+INSERT INTO Returned VALUES (11633783, 100023, '2017-12-11', '2018-01-10', '2017-12-19', 0, 0);
+INSERT INTO Returned VALUES (11451534, 100015, '2017-12-19', '2018-01-18', '2017-12-21', 0, 0);
+INSERT INTO Returned VALUES (11655659, 100005, '2017-12-14', '2018-01-13', '2017-12-22', 0, 0);
+INSERT INTO Returned VALUES (11716078, 100035, '2017-12-04', '2018-01-03', '2017-12-19', 0, 0);
+
+
+INSERT INTO Recommend VALUES (11790670, '9355185792840', 'recommendbook1', 'recommendpress1', 'recommendauthor1', 1, '您荐购的图书(ISBN号：9355185792840)已经购买，请于三日内到馆借书。');
+INSERT INTO Recommend VALUES (11610008, '9336194118485', 'recommendbook2', 'recommendpress2', 'recommendauthor2', 0, '');
+INSERT INTO Recommend VALUES (11137790, '9916935850731', 'recommendbook3', 'recommendpress3', 'recommendauthor3', 2, '您好，经查询，图书馆不予购买该图书(ISBN号：9916935850731)。');
+INSERT INTO Recommend VALUES (11633783, '9301832155154', 'recommendbook4', 'recommendpress4', 'recommendauthor4', 1, '您荐购的图书(ISBN号：9301832155154)已经购买，请于三日内到馆借书。');
+INSERT INTO Recommend VALUES (11790670, '9403685081170', 'recommendbook5', 'recommendpress5', 'recommendauthor5', 0, '');
+INSERT INTO Recommend VALUES (11137790, '9796979386924', 'recommendbook6', 'recommendpress6', 'recommendauthor6', 1, '您荐购的图书(ISBN号：9796979386924)已经购买，请于三日内到馆借书。');
+INSERT INTO Recommend VALUES (11633783, '9836783247700', 'recommendbook7', 'recommendpress7', 'recommendauthor7', 1, '您荐购的图书(ISBN号：9836783247700)已经购买，请于三日内到馆借书。');
+INSERT INTO Recommend VALUES (11137790, '9397265778012', 'recommendbook8', 'recommendpress8', 'recommendauthor8', 1, '您荐购的图书(ISBN号：9397265778012)已经购买，请于三日内到馆借书。');
+INSERT INTO Recommend VALUES (11275084, '9411098700709', 'recommendbook9', 'recommendpress9', 'recommendauthor9', 0, '');
+INSERT INTO Recommend VALUES (11377307, '9129149264473', 'recommendbook10', 'recommendpress10', 'recommendauthor10', 1, '您荐购的图书(ISBN号：9129149264473)已经购买，请于三日内到馆借书。');

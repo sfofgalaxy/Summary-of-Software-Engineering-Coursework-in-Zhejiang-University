@@ -1,0 +1,13 @@
+﻿生成启动时间为 2016/12/13 16:45:40。
+     1>项目“E:\浙大\2016~2017秋冬\OOP\Code\unit three code\unit three\unit three\unit three.vcxproj”在节点 2 上(LibLinkOnly 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“E:\浙大\2016~2017秋冬\OOP\Code\unit three code\unit three\Debug\”。
+       CustomBuildStep:
+       正在跳过目标“CustomBuildStep”，因为它没有输出。
+       CustomBuildStep:
+       正在跳过目标“CustomBuildStep”，因为它没有输出。
+     1>已完成生成项目“E:\浙大\2016~2017秋冬\OOP\Code\unit three code\unit three\unit three\unit three.vcxproj”(LibLinkOnly 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:08.51

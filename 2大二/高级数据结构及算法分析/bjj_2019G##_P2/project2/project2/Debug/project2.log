@@ -1,0 +1,8 @@
+﻿  main.cpp
+d:\!大二下\高级数据结构\bjj_2019g##_p2\project2\project2\main.cpp(143): warning C4018: “<”: 有符号/无符号不匹配
+d:\!大二下\高级数据结构\bjj_2019g##_p2\project2\project2\main.cpp(300): warning C4018: “<”: 有符号/无符号不匹配
+d:\!大二下\高级数据结构\bjj_2019g##_p2\project2\project2\main.cpp(364): warning C4018: “<”: 有符号/无符号不匹配
+d:\!大二下\高级数据结构\bjj_2019g##_p2\project2\project2\main.cpp(385): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\!大二下\高级数据结构\bjj_2019g##_p2\project2\project2\main.cpp(398): warning C4018: “<”: 有符号/无符号不匹配
+d:\!大二下\高级数据结构\bjj_2019g##_p2\project2\project2\main.cpp(405): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+  project2.vcxproj -> D:\!大二下\高级数据结构\bjj_2019G##_P2\project2\Debug\project2.exe

@@ -1,0 +1,9 @@
+﻿  源.c
+d:\大二上\数据结构基础\hw8\hw8_7-1\hw8_7-1\源.c(17): warning C4091: “typedef ”: 没有声明变量时忽略“result”的左侧
+d:\大二上\数据结构基础\hw8\hw8_7-1\hw8_7-1\源.c(29): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
+d:\大二上\数据结构基础\hw8\hw8_7-1\hw8_7-1\源.c(32): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
+d:\大二上\数据结构基础\hw8\hw8_7-1\hw8_7-1\源.c(51): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
+  hw8_7-1.vcxproj -> D:\大二上\数据结构基础\hw8\hw8_7-1\Debug\hw8_7-1.exe

@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container-box{
+    width: 100%;
+    height: 100%;
+}
+
+#brand{
+    margin-top: 7%;
+    width: 100%;
+    text-align: center;
+}
+
+#brand_div{
+    text-align: center;
+    margin-top: 13%;
+    margin-left: 10%;
+    height: 42px;
+    width: 80%;
+    border: 1px solid #b96351;
+    border-radius: 20px;
+}
+
+#brand_div:hover{
+    border: 1px solid #ec8c5b;
+}
+
+#temp_div{
+height: 15%;
+}
+
+#brand_a{
+    text-align: center;
+    margin-top: 5px;
+    color: #ec7259;
+    font-size: 16px;
+}
+
+.menu-footer{
+    width: 100%;
+    margin-top: 55%;
+    text-align: center;
+}
+
+.menu-footer p{
+    color: #c8c8c8;
+    font-size: 12px;
+}
+
+.menu-box{
+    height: 100%;
+    width: 17%;
+    background-color: #3f3f3f;
+    position: fixed;
+}
+
+#menu_nav_div{
+    width: 100%;
+    /*text-align: center;*/
+
+}
+
+.nav-list-label{
+    margin-left: 20%;
+    margin-top: 19px;
+    height: 44px;
+}
+
+.nav-link{
+    /*text-align: center;*/
+}
+
+#nav-list a{
+    color: white;
+}
+
+#nav-list a:hover {
+    background: #646464;
+    /*color: #646464;*/
+}
+
+/*#nav-list a:active{
+    background-color: black;
+}*/
+
+.content-box{
+    float: right;
+    height: 100%;
+    width: 83%;
+    background-color: white;
+}

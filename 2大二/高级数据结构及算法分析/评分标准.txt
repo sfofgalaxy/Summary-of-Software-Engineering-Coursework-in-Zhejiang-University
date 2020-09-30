@@ -1,0 +1,60 @@
+Rubric items: 6
+
+Item 1: 1 point
+
+The cover page must be presented with the title and the date of completion (+ 0.2 pts.).  A complete problem description must be given in Chapter 1 (+0.8 pts.).  Deduct points if:
+
+- the cover page is not complete (-0.2)
+- the introduction is a simple copy + paste of the assignment statement (-0.3)
+- the introduction is not very clear -- in this chapter they are supposed to make it clear WHAT is to be done, besides why they are doing it (-0.1 ~ 0.5)
+- others 每 please specify in the final comments.
+
+Item 2: 2 points
+
+Chapter 2 is supposed to contain the descriptions (pseudo-code preferred) of all the algorithms: word counter, index generator, and query processor (+0.6 pt. for each), plus the data structure of their index (+0.2 pt.).  Deduct points if:
+
+- the algorithm specification is not complete
+- not making their algorithm easier to understand than a simple program (-0.5)
+- only a program + comments, which is not acceptable (-1)
+- some functions in STL are used without a thorough discussion on their implementations (-0.5)
+- others 每 please specify in the final comments.
+
+
+Item 3: 1 point
+
+The overall style of documentation is supposed to be neat and clear.  Deduct (at most 1) point if:
+
+- the document looks like a patch work (-1)
+- messy 每 some of the data in the charts and tables are missing (-1)
+- the hand-in is not zipped with proper folders (-1)
+- the hand-in is not complete 每 some files are missing (-1)
+- others 每 please specify in the final comments.
+
+Item 4: 4 points
+
+A complete table of testing data must be given in Chapter 3, including testing the correctness of the inverted index (+2 pts.) and the thresholding for query (+2 pts.).  Deduct points if:
+
+- the purposes of some test cases are not clearly specified (-1)
+- the testing results are not complete 每 the correctness of the inverted index is missing(-2)
+- the testing results are not complete 每 the thresholding for query is missing(-2)
+- others 每 please specify in the final comments.
+
+Item 5: 3 points
+
+In Chapter 4, analysis of both the time (+1 pt.) and space (+1 pt.) complexities must be given, together with sufficient discussions on the testing results (+1 pt.).  **Bonus points are given for answering the bonus question (+1 ~ 2 pts.).**  Deduct points if:
+
+- there is no comments on the testing results (-1)
+- some functions in STL are used without a thorough discussion on their complexities (-1)
+- **analysis** of the **complexities** of time and/or space is missing -- they must show how they have reached their conclusions, instead of simply listing them (-2)
+- others 每 please specify in the final comments.
+
+Item 6: 9 points
+
+The programmer is supposed to implement the three key functions: the word counting (+1 pt.), the index generation (+5 pts.), and the query processing (+3 pts.).  Deduct points if:
+
+- some of the programs are not working properly (-1 ~ 3)
+- the word counting program is missing (-1)
+- the index generation program is missing (-5)
+- the query processing program is missing (-3)
+- the programs are not well-commented (-9)
+- others 每 please specify in the final comments.

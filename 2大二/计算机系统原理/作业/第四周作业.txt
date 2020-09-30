@@ -1,0 +1,16 @@
+#I->$s0, m->$s1
+	add  $s1  $zero  $zero	# m=0
+	add  $s0  $zero  $zero	# I=0
+For:	slti    $s2  $s1     36		# I<36?
+	beq  $s2  $zero  ext
+	add  $a0  $s0     $zero	#$a0 = I
+	li      $v0  1		#print I
+	syscall
+	add  $s1  $s0      $s1		#m+=I
+	addi $s0  $s0      1		#I++
+	j       For
+
+ext:	add  $a0  $s1  $zero		#$a0 = m
+	li      $v0  1		#print m
+	syscall
+	jr      $ra

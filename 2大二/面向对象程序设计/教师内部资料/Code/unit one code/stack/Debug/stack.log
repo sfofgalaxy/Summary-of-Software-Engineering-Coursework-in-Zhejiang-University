@@ -1,0 +1,17 @@
+﻿生成启动时间为 2016/9/27 14:44:31。
+     1>项目“E:\浙大\2016~2017秋冬\OOP\Code\unit one code\stack\stack.vcxproj”在节点 3 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\gun.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         D:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt otherFile.cpp Gun.cpp test_gun.cpp
+         test_gun.cpp
+         Gun.cpp
+         otherFile.cpp
+     1>e:\浙大\2016~2017秋冬\oop\code\unit one code\stack\otherfile.cpp(10): error C2059: 语法错误:“常量”
+     1>e:\浙大\2016~2017秋冬\oop\code\unit one code\stack\otherfile.cpp(13): warning C4138: 在注释外找到“*/”
+         正在生成代码...
+     1>已完成生成项目“E:\浙大\2016~2017秋冬\OOP\Code\unit one code\stack\stack.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:02.39
