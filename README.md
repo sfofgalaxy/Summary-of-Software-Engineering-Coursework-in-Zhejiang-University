@@ -1,6 +1,12 @@
 # Summary of software engineering coursework in zju
 This repository is my 【Summary of Software Engineering Coursework in Zhejiang University (2017-2021)】, which I'm continuously updating.
 
+# 注意：由于项目过大内容过多，采用了大一到大四四个学年分别上传，该项目没有大三学年的内容
+# [大一仓库](https://github.com/sfofgalaxy/First-Year-Summary-of-Software-Engineering-Coursework-in-Zhejiang-University)
+# [大二仓库](https://github.com/sfofgalaxy/Second-Year-Summary-of-Software-Engineering-Coursework-in-Zhejiang-University)
+# [大三仓库](https://github.com/sfofgalaxy/Third-Year-Summary-of-Software-Engineering-Coursework-in-Zhejiang-University)
+# [大四仓库](https://github.com/sfofgalaxy/Fourth-Year-Summary-of-Software-Engineering-Coursework-in-Zhejiang-University)
+
 ## 大一 (2017.9-2018.6)
 
 #### 程序设计基础
