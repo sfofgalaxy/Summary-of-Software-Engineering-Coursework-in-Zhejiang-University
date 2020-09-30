@@ -1,0 +1,5 @@
+左键单击框选择状态 
+choose状态下左键移动图形，右键改变图形大小
+line、ellipse、retangle状态下画直线、椭圆、矩形
+text状态下单击开始写文字
+delete状态下左键删除所选图形

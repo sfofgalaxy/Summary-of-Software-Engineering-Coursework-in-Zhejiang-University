@@ -1,0 +1,37 @@
+# Project: 填数独
+# Makefile created by Dev-C++ 5.5.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o 填数独函数.o 输出数独函数.o 判断函数.o
+LINKOBJ  = main.o 填数独函数.o 输出数独函数.o 判断函数.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
+BIN      = 填数独.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+填数独函数.o: 填数独函数.c
+	$(CC) -c 填数独函数.c -o 填数独函数.o $(CFLAGS)
+
+输出数独函数.o: 输出数独函数.c
+	$(CC) -c 输出数独函数.c -o 输出数独函数.o $(CFLAGS)
+
+判断函数.o: 判断函数.c
+	$(CC) -c 判断函数.c -o 判断函数.o $(CFLAGS)

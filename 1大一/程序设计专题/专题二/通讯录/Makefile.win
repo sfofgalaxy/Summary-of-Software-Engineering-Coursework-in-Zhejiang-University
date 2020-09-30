@@ -1,0 +1,52 @@
+# Project: ͨѶ¼
+# Makefile created by Dev-C++ 5.5.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o inputc.o importc.o deletec.o findc.o addtel.o birth_sort.o name_sort.o exportc.o
+LINKOBJ  = main.o inputc.o importc.o deletec.o findc.o addtel.o birth_sort.o name_sort.o exportc.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
+BIN      = ͨѶ¼.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+inputc.o: inputc.c
+	$(CC) -c inputc.c -o inputc.o $(CFLAGS)
+
+importc.o: importc.c
+	$(CC) -c importc.c -o importc.o $(CFLAGS)
+
+deletec.o: deletec.c
+	$(CC) -c deletec.c -o deletec.o $(CFLAGS)
+
+findc.o: findc.c
+	$(CC) -c findc.c -o findc.o $(CFLAGS)
+
+addtel.o: addtel.c
+	$(CC) -c addtel.c -o addtel.o $(CFLAGS)
+
+birth_sort.o: birth_sort.c
+	$(CC) -c birth_sort.c -o birth_sort.o $(CFLAGS)
+
+name_sort.o: name_sort.c
+	$(CC) -c name_sort.c -o name_sort.o $(CFLAGS)
+
+exportc.o: exportc.c
+	$(CC) -c exportc.c -o exportc.o $(CFLAGS)
